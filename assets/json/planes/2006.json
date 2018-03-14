@@ -1,0 +1,60 @@
+{
+	"carrera":"Ingeniería Agronómica",
+	"plan"   :"2006",
+	"obligatorias":{
+		"1":[
+			{"regimen":"1er Trimestre","materia":"Matemática I","carga":"96"},
+			{"regimen":"1er Trimestre","materia":"Química General e Inorgánica","carga":"96"},
+			{"regimen":"2do Trimestre","materia":"Morfología de Plantas Vasculares","carga":"96"},
+			{"regimen":"2do Trimestre","materia":"Matemática II","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Física I","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Agroclimatología","carga":"96"}
+		],
+		"2":[
+			{"regimen":"1er Trimestre","materia":"Física II","carga":"96"},
+			{"regimen":"1er Trimestre","materia":"Química Orgánica y Biológica","carga":"96"},
+			{"regimen":"1er Semestre","materia":"Cálculo Estadístico y Biometría","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Botánica Sistemática y Fitogeografía","carga":"96"},
+			{"regimen":"2do Semestre","materia":"Fisiología Vegetal","carga":"120"},
+			{"regimen":"2do Trimestre","materia":"Genética","carga":"72"},
+			{"regimen":"3er Trimestre","materia":"Edafología","carga":"96"}
+		],
+		"3":[
+			{"regimen":"1er Trimestre","materia":"Microbiología Agrícola","carga":"96"},
+			{"regimen":"1er Trimestre","materia":"Zoología Agrícola","carga":"96"},
+			{"regimen":"2do Trimestre","materia":"Fitopatología","carga":"96"},
+			{"regimen":"2do Trimestre","materia":"Economía Política","carga":"72"},
+			{"regimen":"1er Semestre","materia":"Mecanización Agrícola","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Nutrición Animal","carga":"60"},
+			{"regimen":"3er Trimestre","materia":"Química Analítica y Agrícola","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Hidrología Agrícola","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Ecofisiología (Seminario)","carga":"30"},
+			{"regimen":"3er Trimestre","materia":"Recursos Naturales (Seminario)","carga":"30"}
+			
+		],
+		"4":[
+			{"regimen":"1er Trimestre","materia":"Terapeutica Vegetal","carga":"96"},
+			{"regimen":"2do Trimestre","materia":"Economía y Sociología Agraria","carga":"72"},
+			{"regimen":"1er Semestre","materia":"Forrajicultura","carga":"96"},
+			{"regimen":"1er Semestre","materia":"Manejo y Conservación de Suelos","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Silvicultura","carga":"60"},
+			{"regimen":"2do Trimestre","materia":"Fitotécnia (Seminario)","carga":"30"},
+			{"regimen":"2do Semestre","materia":"Zootecnia","carga":"96"},
+			{"regimen":"3er Trimestre","materia":"Fruticultura","carga":"48"},
+			{"regimen":"3er Trimestre","materia":"Cultivos I","carga":"36"},
+			{"regimen":"3er Trimestre","materia":"Cultivos II","carga":"48"}
+		],
+		"5":[
+			{"regimen":"1er Trimestre","materia":"Cultivos III","carga":"48"},
+			{"regimen":"1er Trimestre","materia":"Horticultura","carga":"48"},
+			{"regimen":"1er Trimestre","materia":"Administración y Legislación Rural","carga":"60"},
+			{"regimen":"2do Trimestre","materia":"Proyecto y Planificación Agropecuaria (Seminario)","carga":"30"}
+		]
+	},
+	"optativas":[
+		{"regimen":"Bimestral","materia":"Producción Vegetal (4 asignaturas)","carga":"120"},
+		{"regimen":"Bimestral","materia":"Producción Animal (2 asignaturas)","carga":"60"},
+		{"regimen":"Bimestral","materia":"Otras Áreas (4 asignaturas)","carga":"120"}
+	],
+	"tfg":{"descripcion":"Trabajo Final de Graduación (PASANTÍA o TESINA)","carga":"320"}
+}

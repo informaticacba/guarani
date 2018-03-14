@@ -1,0 +1,8 @@
+<input type="button" value="Imprimir" id="b" style="position: absolute; top: 20px; left: 20px; background-color: #54AF5B; color: #FFFFFF; border: 1px solid black; cursor: pointer; padding: 5px 15px 5px 15px; font-family: Tahoma;	font-size: 1.1em;">
+<script type="text/javascript">
+	document.getElementById("b").onclick = function(){
+	document.getElementById("b").style.display = "none";
+	window.print();
+	document.getElementById("b").style.display = "inline-block";
+	}
+</script>

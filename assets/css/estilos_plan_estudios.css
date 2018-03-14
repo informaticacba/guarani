@@ -1,0 +1,87 @@
+*{
+	font-family: "Times New Roman";
+}
+#logo{
+	width: 80%;
+	margin:0px auto 0px auto;
+	display:block;
+	width: 160mm
+}
+#contenedor_plan{
+	width:210mm;
+	margin:auto;
+}
+.titulo{
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: 900;
+	margin: 2px auto 2px auto;
+}
+.centrado{
+	text-align: center;
+}
+th{
+	text-align:center;
+	font-size: 0.8em;
+}
+.divisor_anio{
+	background-color: #cecccc;
+	text-transform:uppercase;
+	font-weight: bold;
+	font-size: 0.7em;
+	text-align: center;
+
+}
+table{
+	border-width: 1px;
+	border-collapse:collapse;
+	border-color:black;
+	width: 191mm;
+	border-style:solid;
+	margin:auto;
+}
+table th{
+	border-width: 1px;
+	border-style:solid;
+}
+
+table tr td{
+	border-width: 1px;
+	border-style:solid;
+	padding:0px 0px 0px 10px;
+	margin:0px;
+	font-size: 0.8em;
+
+}
+table th:nth-child(1){
+	width: 25mm;
+}
+table th:nth-child(2){
+	width: 40mm;
+}
+table th:nth-child(3){
+	width: 95mm;
+}
+table th:nth-child(4){
+	width: 31mm;
+}
+#datos_alumno{
+	text-indent: 80px;
+	font-size: 0.9em;
+	margin: 15px 30px 0px 50px; 
+	line-height: 23px
+	
+}
+#fecha{
+	text-align: right;
+	margin: 20px 35px 0px 0px;
+	font-size: 0.8em;
+}
+#actualiz_escala{
+	font-size: 0.8em;
+	margin: 5px 0px 5px 138px;
+	
+	
+}
+
+
