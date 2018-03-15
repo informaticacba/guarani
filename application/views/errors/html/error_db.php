@@ -4,11 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<<<<<<< HEAD
 <title>Error de la BD</title>
-=======
-<title>Database Error</title>
->>>>>>> fab62aee7742a0b4de79c552aef72f95bffd8c4b
+
 <style type="text/css">
 
 ::selection { background-color: #E13300; color: white; }
@@ -61,11 +58,8 @@ p {
 </head>
 <body>
 	<div id="container">
-<<<<<<< HEAD
 		<h1>LA BASE DE DATOS DEL SIU-GUARANÍ PARECE NO ESTAR DISPONIBLE</h1>
-=======
-		<h1><?php echo $heading; ?></h1>
->>>>>>> fab62aee7742a0b4de79c552aef72f95bffd8c4b
+
 		<?php echo $message; ?>
 	</div>
 </body>

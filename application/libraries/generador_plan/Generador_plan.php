@@ -4,11 +4,11 @@ class Generador_plan{
 	private $apellido;
 	private $dni;
 	private $genero;
+	private $carrera;
 	private $ingreso;
 	protected $plan;
 
-
-	function set_datos($apellido, $nombres, $dni, $genero, $ingreso)
+	function set_datos($apellido, $nombres, $dni, $genero, $carrera, $ingreso)
 	{
 		try{
 			$this->nombres = $nombres;
@@ -16,6 +16,7 @@ class Generador_plan{
 			$this->dni = substr($dni,0,2).".".substr($dni,2,3).".".substr($dni,5,3);
 			$this->genero = $genero;
 			$this->ingreso = $ingreso;
+			$this->carrera = $carrera;
 
 		}catch(Exception $e){
 			die("No se han definido todos los parametros necesarios para generar el reporte");
@@ -25,26 +26,38 @@ class Generador_plan{
 	}
 	private function get_plan()
 	{
-		switch ($this->ingreso) {
-			case ($this->ingreso < 2002):
-				die('Raje!!! Alumno recontra viejo!');
+		switch ($this->carrera) {
+			case '01':
+				switch ($this->ingreso) {
+					case ($this->ingreso < 2002):
+						die('Raje!!! Alumno recontra viejo!');
+						break;
+					case ($this->ingreso >= 2002 && $this->ingreso < 2006):
+						$archivo_plan = base_url()."assets/json/planes/agr-2002.json"; 
+						break;
+					case ($this->ingreso == 2006):
+						$archivo_plan = base_url()."assets/json/planes/agr-2006.json";
+						break;
+					case ($this->ingreso > 2006 && $this->ingreso < 2013):
+						$archivo_plan = base_url()."assets/json/planes/agr-2006-intro.json"; 
+						break;
+					case ($this->ingreso >= 2013 && $this->ingreso < 2015):
+						$archivo_plan = base_url()."assets/json/planes/2013.json";
+						break;
+					case ($this->ingreso >= 2013):
+						$archivo_plan = base_url()."assets/json/planes/agr-2013-2015.json";
+						break;
+				}
 				break;
-			case ($this->ingreso >= 2002 && $this->ingreso < 2006):
-				$archivo_plan = base_url()."assets/json/planes/2002.json"; 
-				break;
-			case ($this->ingreso == 2006):
-				$archivo_plan = base_url()."assets/json/planes/2006.json";
-				break;
-			case ($this->ingreso > 2006 && $this->ingreso < 2013):
-				$archivo_plan = base_url()."assets/json/planes/2006-intro.json"; 
-				break;
-			case ($this->ingreso >= 2013 && $this->ingreso < 2015):
-				$archivo_plan = base_url()."assets/json/planes/2013.json";
-				break;
-			case ($this->ingreso >= 2013):
-				$archivo_plan = base_url()."assets/json/planes/2013-2015.json";
+			case '08':
+				switch ($this->ingreso) {
+					case ($this->ingreso >= 2016):
+						$archivo_plan = base_url()."assets/json/planes/ind-2016.json"; 
+						break;
+				}
 				break;
 		}
+				
 		//obtengo la plantilla correspondiente
 		$archivo = file_get_contents($archivo_plan);
 		return json_decode(utf8_encode($archivo));
@@ -72,7 +85,8 @@ class Generador_plan{
 		echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"".base_url()."assets/css/estilos_plan_estudios.css\">
 				<div id=\"contenedor_plan\">
 					<div id=\"cabecera\">
-						<img src=\"".base_url()."assets/img/perm/logo_encabezado.png\" id=\"logo\">
+						<img src=\"".base_url()."assets/img/perm/logo_reforma.png\" id=\"logo\">
+						<!-- <img src=\"".base_url()."assets/img/perm/logo_encabezado.png\" id=\"logo\"> -->
 						<p class=\"titulo centrado\">CARRERA ".$this->plan->carrera."</p>
 						<p class=\"titulo centrado\">PLAN DE ESTUDIOS ".$this->plan->plan;
 		if($this->ingreso > 2006 && $this->ingreso < 2013){
@@ -106,7 +120,7 @@ class Generador_plan{
 		foreach ($this->plan->optativas as $optativa){
 			echo "<tr>";
 			if($primer_optativa){
-				echo"<td rowspan=\"3\">OPTATIVAS</td>
+				echo"<td rowspan=\"".count($this->plan->optativas)."\">OPTATIVAS</td>
 					<td class=\"centrado\">".$optativa->regimen."</td>
 					<td>".$optativa->materia."</td>
 					<td class=\"centrado\">".$optativa->carga."</td>";
@@ -130,7 +144,7 @@ class Generador_plan{
 		echo (intval($this->genero) == 1) ? 'al alumno' : 'a la alumna'; 
 		echo " de esta casa de estudios "; 
 		echo (intval($this->genero) == 1) ? 'Sr. ' : 'Srta. ';
-		echo "<b>".strtoupper($this->apellido).", ".ucwords(strtolower($this->nombres))." (D.N.I.: Nº ".$this->dni.").-</b>
+		echo "<b>".str_replace("-N-","Ñ",strtoupper($this->apellido)).", ".ucwords(str_replace('-n-','ñ',strtolower($this->nombres)))." (D.N.I.: Nº ".$this->dni.").-</b>
 			</div>";
 		if($this->ingreso > 2006 && $this->ingreso < 2013){
 			echo "<div id='actualiz_escala'>

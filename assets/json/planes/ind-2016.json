@@ -1,0 +1,67 @@
+{
+	"carrera":"Ingeniería Industrial",
+	"plan"   :"2016",
+	"obligatorias":{
+		"1":[
+			{"regimen":"1er Cuatrimestre","materia":"Introducción a la Ingeniería Industrial","carga":"64"},
+			{"regimen":"1er Cuatrimestre","materia":"Matemática A (Álgebra y Geometría Analítica)","carga":"96"},
+			{"regimen":"1er Cuatrimestre","materia":"Química General e Inorgánica","carga":"80"},
+			{"regimen":"1er Cuatrimestre","materia":"Matemática B (Análisis I)","carga":"96"},
+			{"regimen":"Anual","materia":"Inglés I","carga":"80"},
+			{"regimen":"2do Cuatrimestre","materia":"Informática y Programación","carga":"64"},
+			{"regimen":"2do Cuatrimestre","materia":"Matemática C (Análisis II)","carga":"96"},
+			{"regimen":"2do Cuatrimestre","materia":"Sistemas de Representación","carga":"64"},
+			{"regimen":"2do Cuatrimestre","materia":"Física","carga":"128"}
+		],
+		"2":[
+			{"regimen":"1er Cuatrimestre","materia":"Matemática D","carga":"96"},
+			{"regimen":"1er Cuatrimestre","materia":"Química Industrial","carga":"80"},
+			{"regimen":"1er Cuatrimestre","materia":"Probabilidad y Estadística","carga":"80"},
+			{"regimen":"1er Cuatrimestre","materia":"Termodinámica y Máquinas Térmicas","carga":"80"},
+			{"regimen":"Anual","materia":"Inglés II","carga":"80"},
+			{"regimen":"2do Cuatrimestre","materia":"Electricidad y Magnetismo","carga":"97"},
+			{"regimen":"2do Cuatrimestre","materia":"Mecánica de los Fluidos","carga":"64"},
+			{"regimen":"2do Cuatrimestre","materia":"Microbiología Industrial","carga":"80"},
+			{"regimen":"2do Cuatrimestre","materia":"Administración de Empresas Industriales","carga":"64"},
+			{"regimen":"2do Cuatrimestre","materia":"Mecánica y Mecanismos","carga":"63"}
+		],
+		"3":[
+			{"regimen":"Cuatrimestral","materia":"Estática y Resistencia de Materiales","carga":"80"},
+			{"regimen":"Cuatrimestral","materia":"Organización de la Producción","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Máquinas Industriales","carga":"80"},
+			{"regimen":"Cuatrimestral","materia":"Investigación Operativa","carga":"80"},
+			{"regimen":"Anual","materia":"Inglés III","carga":"80"},
+			{"regimen":"Cuatrimestral","materia":"Economía Política","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Procesos Industriales","carga":"80"},
+			{"regimen":"Cuatrimestral","materia":"Ciancia de los Materiales","carga":"80"},
+			{"regimen":"Cuatrimestral","materia":"Electrónica y Máquinas Eléctricas","carga":"80"},
+			{"regimen":"Cuatrimestral","materia":"Construcciones y Montajes Industriales","carga":"80"}
+			
+			
+		],
+		"4":[
+			{"regimen":"1/2 Cuatrimestre","materia":"Ingeniería Legal","carga":"48"},
+			{"regimen":"1/2 Cuatrimestre","materia":"Ingeniería Ambiental","carga":"48"},
+			{"regimen":"Cuatrimestral","materia":"Industria de la Madera","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Industria Pecuaria","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Industria de Vegetales I","carga":"64"},
+			{"regimen":"Anual","materia":"Inglés IV","carga":"80"},
+			{"regimen":"Cuatrimestral","materia":"Industria de Vegetales II","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Industria de Vegetales III","carga":"64"}
+			
+		],
+		"5":[
+			{"regimen":"Cuatrimestral","materia":"Automatización Industrial","carga":"30"},
+			{"regimen":"Cuatrimestral","materia":"Gestión Ingegral de la Calidad","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Higiene y Seguridad Industrial","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Formulación y Evaluación de Proyectos","carga":"64"},
+			{"regimen":"Cuatrimestral","materia":"Prácticas Profesionales Supervisadas","carga":"200"}
+			
+		]
+	},
+	"optativas":[
+		{"regimen":"Bimestral","materia":"Producción (4 asignaturas)","carga":"120"},
+		{"regimen":"Bimestral","materia":"Producción (4 asignaturas)","carga":"90"}
+	],
+	"tfg":{"descripcion":"Proyecto Agroindustrial (TFG)","carga":"150"}
+}

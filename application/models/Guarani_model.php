@@ -39,8 +39,11 @@ class Guarani_model extends CI_Model {
 		$resultado=$this->db->query($consulta);
 		
 		$arr = $resultado->result_array();
-
-		$datos = $arr[0];
+		if(count($arr)){
+			$datos = $arr[0];
+		}else{
+			return array();
+		}
 		
 		$datos['apellido'] =strtoupper(str_replace("Ñ","-n-", utf8_encode($datos['apellido']))); 
 		$datos['nombres'] = ucwords(strtolower(str_replace("Ñ","-n-",utf8_encode($datos['nombres'])))); 
@@ -63,7 +66,7 @@ class Guarani_model extends CI_Model {
 					    where materia_generica in ('87','88.') and materia_optativa <> 'IDIOM'
 					)
 					and vw.legajo = '$legajo'
-					and vw.carrera = '01'
+					--and vw.carrera = '01'
 					and vw.resultado = 'A'";
 		//echo $consulta; die;
 		$resultado=$this->db->query($consulta);
@@ -156,7 +159,8 @@ class Guarani_model extends CI_Model {
 			$consulta = "select count(*) as cantidad, det.resultado
 						from sga_detalle_acta as det
 						left join sga_actas_examen as act on act.acta = det.acta
-						where det.carrera = '01' 
+						where 1=1
+						--and det.carrera = '01' 
 						and act.materia in ($mat)
 						and det.plan in ('1963','1985','2002','2006','2013')
 						and det.rectificado = 'N'
@@ -246,7 +250,7 @@ class Guarani_model extends CI_Model {
 	}
 
 	public function es_regular($legajo){
-		$consulta= "select first 1 regular from sga_alumnos where carrera = '01' and legajo = $legajo";
+		$consulta= "select first 1 regular from sga_alumnos where legajo = $legajo";
 		// obtenermos los resultados
 		$resultado=$this->db->query($consulta);
 
@@ -260,7 +264,7 @@ class Guarani_model extends CI_Model {
 	}
 
 	public function get_calidad($legajo){
-		$consulta= "select first 1 calidad from sga_alumnos where carrera = '01' and legajo = $legajo";
+		$consulta= "select first 1 calidad from sga_alumnos where legajo = $legajo";
 		// obtenermos los resultados
 		$resultado=$this->db->query($consulta);
 		$calidad = $resultado->result_array(); 
@@ -270,7 +274,7 @@ class Guarani_model extends CI_Model {
 	}
 
 	public function get_plan_alumno($legajo){
-		$consulta= "select first 1 plan from sga_alumnos where carrera = '01' and legajo = $legajo";
+		$consulta= "select first 1 plan from sga_alumnos where legajo = $legajo";
 		// obtenermos los resultados
 		$resultado=$this->db->query($consulta);
 		$plan = $resultado->result_array(); 
