@@ -171,7 +171,7 @@ class Inicio extends CI_Controller {
 
 	}
 
-	function generar_plan_estudios($legajo,$carrera)
+	function generar_plan_estudios($legajo,$carrera,$siglas='mfa')
 	{
 		
 		$d = $this->Guarani_model->get_datos_personales($legajo,$carrera);
@@ -181,7 +181,7 @@ class Inicio extends CI_Controller {
 		$ingreso = explode('-',$d['fecha_ingreso']);
 
 		$reporte = new Generador_plan();
-		$reporte->set_datos($d['apellido'],$d['nombres'],$d['nro_documento'],$d['sexo'],$carrera,$ingreso[0]);
+		$reporte->set_datos($d['apellido'],$d['nombres'],$d['nro_documento'],$d['sexo'],$carrera,$ingreso[0],$siglas);
 		$reporte->generar_reporte();
 		
 		

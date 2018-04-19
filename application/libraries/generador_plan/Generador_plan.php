@@ -7,8 +7,9 @@ class Generador_plan{
 	private $carrera;
 	private $ingreso;
 	protected $plan;
+	private $siglas;
 
-	function set_datos($apellido, $nombres, $dni, $genero, $carrera, $ingreso)
+	function set_datos($apellido, $nombres, $dni, $genero, $carrera, $ingreso, $siglas)
 	{
 		try{
 			$this->nombres = $nombres;
@@ -17,6 +18,7 @@ class Generador_plan{
 			$this->genero = $genero;
 			$this->ingreso = $ingreso;
 			$this->carrera = $carrera;
+			$this->siglas = $siglas;
 
 		}catch(Exception $e){
 			die("No se han definido todos los parametros necesarios para generar el reporte");
@@ -42,7 +44,7 @@ class Generador_plan{
 						$archivo_plan = base_url()."assets/json/planes/agr-2006-intro.json"; 
 						break;
 					case ($this->ingreso >= 2013 && $this->ingreso < 2015):
-						$archivo_plan = base_url()."assets/json/planes/2013.json";
+						$archivo_plan = base_url()."assets/json/planes/agr-2013.json";
 						break;
 					case ($this->ingreso >= 2013):
 						$archivo_plan = base_url()."assets/json/planes/agr-2013-2015.json";
@@ -154,7 +156,8 @@ class Generador_plan{
 		echo "<div id=\"fecha\">
 				<b>Dirección Gestión de Estudios</b>, ".date('d')." de ".$meses[date('m')]." de ".date('Y').".-
 			</div>
-		</div>";
+		</div>
+		<div id='siglas'>".$this->siglas."</div>";
 		
 	}
 

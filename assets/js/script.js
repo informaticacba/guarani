@@ -402,7 +402,7 @@ $(document).ready(function(){
 function actualizar_enlace_generar_plan_estudios(){
 	var legajo = $("#txt_legajo_plan_estudios").prop('value');
 	var carrera = $("#select_carrera_plan_estudios").prop('value');
-	var enlace = 'index.php/inicio/generar_plan_estudios/'+legajo+"/"+carrera;
+	var enlace = 'index.php/inicio/generar_plan_estudios/'+legajo+"/"+carrera+"/mfa";
 	$("#btn_generar_plan_estudios").attr('href',enlace);
 	
 }
