@@ -65,7 +65,7 @@ class Inicio extends CI_Controller {
 		} 
 	}
 
-	public function ver_reporte($reporte, $apellido, $nombres, $dni, $modalidad, $sexo, $obligatorias = NULL, $optativas = NULL,$nota = NULL, $autor = NULL, $materia = NULL, $fecha_examen = NULL, $legajo = NULL){
+	public function ver_reporte($reporte, $apellido, $nombres, $dni, $modalidad, $sexo, $obligatorias = NULL, $optativas = NULL,$nota = NULL, $autor = NULL, $materia = NULL, $fecha_examen = NULL, $legajo = NULL, $carrera=NULL){
 		switch ($reporte) {
 			case 'realizar_pasantia':
 				$this->load->view('reportes/cert_realizar_tfg',array("apellido"=>$apellido,"nombres"=>$nombres,"dni"=>$dni,"modalidad"=>"pasantia","sexo"=>$sexo,"obligatorias"=>$obligatorias,"optativas"=>$optativas,"autor"=>$autor));
@@ -81,7 +81,7 @@ class Inicio extends CI_Controller {
 				break;
 			case 'examen':
 				
-				$this->load->view('reportes/cert_examen',array("apellido"=>$apellido,"nombres"=>$nombres,"dni"=>$dni,"nota"=>$nota,"autor"=>$autor,"materia"=>$materia,"fecha"=>$fecha_examen,"legajo"=>$legajo));
+				$this->load->view('reportes/cert_examen',array("apellido"=>$apellido,"nombres"=>$nombres,"dni"=>$dni,"nota"=>$nota,"autor"=>$autor,"materia"=>$materia,"fecha"=>$fecha_examen,"legajo"=>$legajo,"carrera"=>$carrera));
 				break;
 		}
 		

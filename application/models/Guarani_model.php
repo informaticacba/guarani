@@ -282,7 +282,7 @@ class Guarani_model extends CI_Model {
 		
 	}
 
-	public function ultimos_examenes($legajo, $cant){
+	public function ultimos_examenes($carrera, $legajo, $cant){
 		$consulta = "select first $cant distinct per.apellido, 
 												per.nombres, 
 												per.nro_documento, 
@@ -298,6 +298,7 @@ class Guarani_model extends CI_Model {
 					where detacta.legajo = '$legajo'
 					and detacta.rectificado = 'N'
 					and detacta.estado = 'A'
+					and detacta.carrera = '$carrera'
 					and detacta.resultado is not null 
 					order by detacta.fecha_de_examen desc";
 		$resultado = $this->db->query($consulta);
@@ -338,6 +339,7 @@ class Guarani_model extends CI_Model {
 
 	public function get_nombres_archivos(){
 		$archivo = file_get_contents("./assets/nombres_archivo.json");
+
 		$arr = json_decode($archivo);
 		foreach ($arr as $key => $value) {
 			$nombres[$value->materia] = $value->nombre_archivo;

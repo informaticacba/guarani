@@ -73,6 +73,10 @@
 			</div>
 			<div id="const_examen">
 				<hr>
+				Carrera: <select id="select_carrera_const_examen">
+					<option value="01">Agronomía</option>
+					<option value="08">Industrial</option>
+				</select>
 				Legajo: <input type="text" name="legajo_const_exa" id="txt_legajo_const_exa"><input type="button" id="cmd_const_examen" value="Generar">
 				<hr>
 				<div id="ultimos_examenes" class="ultimos_examenes">

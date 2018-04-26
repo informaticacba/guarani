@@ -143,11 +143,11 @@ $(document).ready(function(){
 	$("#txt_legajo_const_exa").on('keypress',function(e){
 		if(e.keyCode == 13 ){
 			e.preventDefault();
-			ultimos_examenes( $("#txt_legajo_const_exa").prop("value"), 3);
+			ultimos_examenes($("#select_carrera_const_examen").prop("value"), $("#txt_legajo_const_exa").prop("value"), 3);
 		}
 	})
 	$("#cmd_const_examen").on("click",function(){
-		ultimos_examenes( $("#txt_legajo_const_exa").prop("value"), 3);
+		ultimos_examenes($("#select_carrera_const_examen").prop("value"), $("#txt_legajo_const_exa").prop("value"), 3);
 	})
 	/* ---------------------------------------- ------------------ --------------------------------------------*/
 
@@ -523,11 +523,11 @@ function estado_tfg(legajo_tfg){
 	})
 }
 
-function ultimos_examenes(legajo_const_exa, cantidad){
+function ultimos_examenes(carrera, legajo_const_exa, cantidad){
 	$(".hist_exa td").html("");
 
 	$.ajax({
-		url: "./index.php/ajax/ultimos_examenes/"+legajo_const_exa+"/"+cantidad,
+		url: "./index.php/ajax/ultimos_examenes/"+carrera+"/"+legajo_const_exa+"/"+cantidad,
 		dataType: 'json',
 		method: 'POST',
 		error: function(err){
@@ -579,7 +579,7 @@ function ultimos_examenes(legajo_const_exa, cantidad){
 						break;
 				}
 					$("#resultado"+i).html(literal+" ("+r[i].nota+")");
-					$("#enlace"+i).html("<a target='_BLANK' href='./index.php/inicio/ver_reporte/examen/"+r[i].apellido.replace(/ /g,"_")+"/"+r[i].nombres.replace(/ /g,"_")+"/"+r[i].nro_documento+"/0/0/0/0/"+r[i].nota+"/mfa/"+r[i].materia.replace(/ /g,"_")+"/"+r[i].fecha_de_examen+"/"+legajo_const_exa+"'>Generar</a>");
+					$("#enlace"+i).html("<a target='_BLANK' href='./index.php/inicio/ver_reporte/examen/"+r[i].apellido.replace(/ /g,"_")+"/"+r[i].nombres.replace(/ /g,"_")+"/"+r[i].nro_documento+"/0/0/0/0/"+r[i].nota+"/mfa/"+r[i].materia.replace(/ /g,"_")+"/"+r[i].fecha_de_examen+"/"+legajo_const_exa+"/"+carrera+"'>Generar</a>");
 				}else{ //cuando resultado = 'U'
 					$("#resultado"+i).html('Ausente');
 				}

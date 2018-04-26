@@ -29,9 +29,9 @@ class Ajax extends CI_Controller {
 		echo json_encode($respuesta);
 	}
 
-	public function ultimos_examenes($legajo, $cantidad){
+	public function ultimos_examenes($carrera, $legajo, $cantidad){
 		
-		$ultimos_examenes = $this->Guarani_model->ultimos_examenes($legajo, $cantidad); //cambiar esta linea para traer mas examenes
+		$ultimos_examenes = $this->Guarani_model->ultimos_examenes($carrera,$legajo, $cantidad); //cambiar esta linea para traer mas examenes
 		echo json_encode($ultimos_examenes);
 	}
 

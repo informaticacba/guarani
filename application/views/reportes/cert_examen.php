@@ -50,6 +50,7 @@
 	</style>
 
 	<?php //extract($_GET); ?>
+	<?php $carrera = ($carrera == '01') ? 'INGENIERÍA AGRONÓMICA' : 'INGENIERÍA INDUSTRIAL'; ?>
 	<?php $anio = substr($fecha,0,4); $mes = substr($fecha,5,2); $dia = substr($fecha,8,2);?>
 	<?php $meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','agosto','noviembre','diciembre'); ?>
 	<?php $escala = array(1=>'Insuficiente',2=>'Insuficiente',3=>'Insuficiente',4=>'Insuficiente',5=>'Insuficiente',6=>'Aprobado',7=>'Bueno',8=>'Muy Bueno',9=>'Distinguido',10=>'Sobresaliente'); ?>
@@ -59,7 +60,7 @@
 		<center><img src="<?php echo base_url(); ?>assets/img/perm/membrete.png" alt="Facultad de Ciencias Agrarias - UNNE" width='600mm' height="140mm;"></center>
 		
 		<div id="cuerpo">
-			<p>La que suscribe <b>D</b>irectora <b>G</b>esti&oacute;n <b>E</b>studios de la <b>F</b>ACULTAD <b>D</b>E <b>C</b>IENCIAS <b>A</b>GRARIAS dependiente de la <b>UNNE, HACE CONSTAR Que: <?php echo str_replace(array("_","-N-"),array(" ","Ñ"),strtoupper($apellido)); ?>, <?php echo ucwords(strtolower(str_replace(array("_","-N-"),array(" ","Ñ"),strtoupper($nombres)))); ?> (D.N.I. Nº <?php echo substr($dni, 0,2).".".substr($dni, 2,3).".".substr($dni, 5,3); ?>), Legajo Nº <?php echo $legajo; ?></b>, alumno/a de la carrera <b>“INGENIERÍA AGRONÓMICA”</b> ha rendido la asignatura <b>“<?php echo str_replace("_"," ",strtoupper($materia)); ?>”</b> el día <?php echo $dia; ?> de <?php echo $meses[$mes-1]; ?> del año <?php echo $anio; ?> con nota <?php echo $escala[$nota]; ?> (<?php echo $nota; ?>).-</p>
+			<p>La que suscribe <b>D</b>irectora <b>G</b>esti&oacute;n <b>E</b>studios de la <b>F</b>ACULTAD <b>D</b>E <b>C</b>IENCIAS <b>A</b>GRARIAS dependiente de la <b>UNNE, HACE CONSTAR Que: <?php echo str_replace(array("_","-N-"),array(" ","Ñ"),strtoupper($apellido)); ?>, <?php echo ucwords(strtolower(str_replace(array("_","-N-"),array(" ","Ñ"),strtoupper($nombres)))); ?> (D.N.I. Nº <?php echo substr($dni, 0,2).".".substr($dni, 2,3).".".substr($dni, 5,3); ?>), Legajo Nº <?php echo $legajo; ?></b>, alumno/a de la carrera <b>“<?php echo $carrera; ?>”</b> ha rendido la asignatura <b>“<?php echo str_replace("_"," ",strtoupper($materia)); ?>”</b> el día <?php echo $dia; ?> de <?php echo $meses[$mes-1]; ?> del año <?php echo $anio; ?> con nota <?php echo $escala[$nota]; ?> (<?php echo $nota; ?>).-</p>
 			<p>A pedido de parte interesada y a los efectos de ser presentada ante las autoridades que lo requieran, se extiende la presente que sella y firma en la ciudad de Corrientes, el día <?php echo date("d"); ?> de <?php echo $meses[date('n')-1]; ?> de <?php echo date("Y"); ?>.-</p>
 		</div>
 		<div id="firma">
