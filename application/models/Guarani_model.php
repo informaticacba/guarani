@@ -137,11 +137,14 @@ class Guarani_model extends CI_Model {
 
 		//var_dump(json_decode($materias_obligatorias)); die;
 		$materias = json_decode($materias_obligatorias);
-		//var_dump($materias); die;
+		
+
 		foreach($materias as $indice => $materia){
+			
 			if( ! $materia){
 				continue;
 			}
+
 			//no me interesa si no tiene final
 			if ( ! $materia->tiene_final){
 				continue;
@@ -162,7 +165,7 @@ class Guarani_model extends CI_Model {
 						where 1=1
 						--and det.carrera = '01' 
 						and act.materia in ($mat)
-						and det.plan in ('1963','1985','2002','2006','2013')
+						--and det.plan in ('1963','1985','2002','2006','2013')
 						and det.rectificado = 'N'
 						and act.anio_academico = '$anio'
 						and act.turno_examen = '$turno'
@@ -171,6 +174,7 @@ class Guarani_model extends CI_Model {
 						group by det.resultado";
 
 			//obtengo la materia
+			
 			$consulta_materia = "select first 1 nombre from sga_materias where materia in (".$mat.") order by materia DESC";
 			$resultado=$this->db->query($consulta_materia);
 			$materia = $resultado->result_array(); 
@@ -178,8 +182,9 @@ class Guarani_model extends CI_Model {
 
 			//obtengo los resultados de examenes
 			$resultado=$this->db->query($consulta);
+		
 			if( !$resultado->result_array()){
-				return;
+				continue;
 			}
 			$arr = $resultado->result_array();
 			
@@ -317,6 +322,13 @@ class Guarani_model extends CI_Model {
 											);
 		}
 		return $ultimos_examenes;
+	}
+
+	public function get_alcances()
+	{
+		$sql = "select alcance, titulo from gde_encues_alcance";
+		$resultado = $this->db->query($sql);
+		return $resultado->result_array();
 	}
 
 	//obtiene las materias de una determinada encuesta
@@ -793,7 +805,7 @@ class Guarani_model extends CI_Model {
 			$consulta = "select count(*) as cantidad from sga_det_acta_curs as det where det.acta in ".$this->get_actas('regular',$materia, $anio)." and det.resultado = 'A'";
 			$subconsulta = "select legajo 
 								from sga_insc_cursadas
-								where comision in (select comision from sga_comisiones where materia in (".$materia.") and anio_academico < ".$anio." and sede = '00000' and carrera = '01') and estado = 'A'";
+								where comision in (select comision from sga_comisiones where materia in (".$materia.") and anio_academico < ".$anio." and sede = '00000') and estado = 'A'";
 			if( $recursantes ){
 				$consulta .= " and det.legajo in (".$subconsulta.")";
 			}else{
@@ -816,7 +828,7 @@ class Guarani_model extends CI_Model {
 			$consulta = "select count(*) as cantidad from sga_det_acta_promo as det where det.acta in ".$this->get_actas('promo',$materia, $anio)." and det.resultado = 'P' and det.rectificado = 'N'";
 			$subconsulta = "select legajo 
 								from sga_insc_cursadas
-								where comision in (select comision from sga_comisiones where materia in (".$materia.") and anio_academico < ".$anio." and sede = '00000' and carrera = '01') and estado = 'A'";
+								where comision in (select comision from sga_comisiones where materia in (".$materia.") and anio_academico < ".$anio." and sede = '00000') and estado = 'A'";
 			if( $recursantes ){
 				$consulta .= " and det.legajo in (".$subconsulta.")";
 			}else{
