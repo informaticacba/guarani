@@ -9,7 +9,6 @@
 			font-family: "Times New Roman", Times, serif;
 		}
 		body{
-			background-color: #CCCCCC;
 		}
 		#contenedor{
 			width: 215.9mm;

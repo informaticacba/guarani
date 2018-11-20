@@ -9,7 +9,6 @@
 			font-family: "Times New Roman", Times, serif;
 		}
 		body{
-			background-color: #CCCCCC;
 		}
 		#contenedor{
 			width: 215.9mm;
@@ -52,7 +51,7 @@
 		}
 	</style>
 	<?php extract($_GET); ?>
-	<?php $meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','agosto','noviembre','diciembre'); ?>
+	<?php $meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'); ?>
 	<?php //echo $modalidad; die; ?>
 	<?php $modalidad = ($modalidad == 'pasantia')? 'pasant&iacute;a':'tesina';  ?>
 </head>
@@ -60,8 +59,8 @@
 	<div id="contenedor">
 		<center><img src="<?php echo base_url(); ?>assets/img/perm/membrete.png" alt="Facultad de Ciencias Agrarias - UNNE" width='600mm' height="140mm;"></center>
 		<div id="destinatario">
-			<p>Señora Decana</p>
-			<p>Ing. Agr. (Dra.) Sara Vázquez</p>
+			<p>Señor Decano</p>
+			<p>Ing. Agr. (Dr.) Mario Hugo Urbani</p>
 			<p><u>S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D</u></p>
 		</div>

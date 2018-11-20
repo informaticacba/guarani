@@ -8,7 +8,7 @@
 			font-family: "Times New Roman", Times, serif;
 		}
 		body{
-			background-color: #CCCCCC;
+			/*background-color: #CCCCCC;*/
 		}
 		#contenedor{
 			width: 215.9mm;
@@ -52,7 +52,7 @@
 	<?php //extract($_GET); ?>
 	<?php $carrera = ($carrera == '01') ? 'INGENIERÍA AGRONÓMICA' : 'INGENIERÍA INDUSTRIAL'; ?>
 	<?php $anio = substr($fecha,0,4); $mes = substr($fecha,5,2); $dia = substr($fecha,8,2);?>
-	<?php $meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','agosto','noviembre','diciembre'); ?>
+	<?php $meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'); ?>
 	<?php $escala = array(1=>'Insuficiente',2=>'Insuficiente',3=>'Insuficiente',4=>'Insuficiente',5=>'Insuficiente',6=>'Aprobado',7=>'Bueno',8=>'Muy Bueno',9=>'Distinguido',10=>'Sobresaliente'); ?>
 </head>
 <body>
