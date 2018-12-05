@@ -607,7 +607,7 @@ function buscar_alcances(){
 		dataType: 'json',
 		method: 'POST',
 		error: function(err){
-			//console.log(err)
+			console.log(err)
 		},
 		success: function(r){
 			$.each(r, function (index, valor) {
@@ -632,7 +632,7 @@ function encuestas_get_materias(){
 		beforeSend: function(){$("#encuestas .procesando").css("display","block")},
 		complete: function(){$("#encuestas .procesando").css("display","none")},
 		error: function(err){
-			//console.log(err)
+			console.log(err)
 		},
 		success: function(r){
 			if(r.length > 0){
@@ -664,7 +664,7 @@ function encuestas_get_docentes(){
 		beforeSend: function(){$(".procesando").css("display","block")},
 		complete: function(){$(".procesando").css("display","none")},
 		error: function(err){
-			//console.log(err)
+			console.log(err)
 		},
 		success: function(r){
 			
