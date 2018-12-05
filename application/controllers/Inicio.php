@@ -12,6 +12,8 @@ class Inicio extends CI_Controller {
 		$this->load->library("fpdf/Pdf_tiempos_materias");
 		$this->load->library('generador_plan/Generador_plan');
 		$this->load->library("Persona");
+			
+
 		//$this->Guarani_model->cant_mat_obligatorias('9969'); die;
 		//$datos = $this->Guarani_model->tiempos_materias(2011,array('50','51.'));
 		//var_dump($datos); die;
@@ -22,6 +24,7 @@ class Inicio extends CI_Controller {
 		
 
 	}
+
 	//funcion auxiliar que no se utiliza
 	public function curs(){
 		$ubicacion = "./assets/materias.json";
@@ -97,12 +100,14 @@ class Inicio extends CI_Controller {
 		$turno = $this->input->post("insc_turno");
 		//echo $codigos_materia; die;
 		//Obtengo el nombre de la materia en funcion a los codigos seleccionados
+
 		$materia = $this->Guarani_model->get_nombre_materia($codigos_materia);
 
 		//obtengo los inscritos correspondientes
 		$inscritos = $this->Guarani_model->get_inscritos_examen($codigos_materia,$turno,$llamado);
 		//var_dump($nombres_archivo); die;
 		//var_dump($materia); die;
+		//var_dump($nombres_archivo[$materia]);
 		$nombre_archivo = $nombres_archivo[$materia];
 		//echo $materia; die;
 

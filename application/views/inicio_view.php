@@ -85,6 +85,9 @@
 						<tr class="hist_exa"><td id="fecha0"></td><td id="materia0"></td><td id="resultado0"></td><td id="enlace0"></td></tr>
 						<tr class="hist_exa"><td id="fecha1"></td><td id="materia1"></td><td id="resultado1"></td><td id="enlace1"></td></tr>
 						<tr class="hist_exa"><td id="fecha2"></td><td id="materia2"></td><td id="resultado2"></td><td id="enlace2"></td></tr>
+						<tr class="hist_exa"><td id="fecha3"></td><td id="materia3"></td><td id="resultado3"></td><td id="enlace3"></td></tr>
+						<tr class="hist_exa"><td id="fecha4"></td><td id="materia4"></td><td id="resultado4"></td><td id="enlace4"></td></tr>
+						
 					</table>
 				</div>
 			</div>

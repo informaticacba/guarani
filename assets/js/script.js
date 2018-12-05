@@ -14,6 +14,14 @@ $(document).ready(function(){
 	//obtengo los certificados pendientes de impresion
 	cert_pendientes();
 
+	buscar_alcances();
+	$('#select_alcances').on('change',function(){
+		encuestas_get_materias();
+	})
+	$('#select_materias').on('change',function(){
+		encuestas_get_docentes();
+	})
+
 	/* ---------------------------------------- ESTADO PARA EL TFG --------------------------------------------*/
 	//al presionar enter se busca el estado para TFD
 	$("#txt_legajo_tfg").on('keypress',function(e){
@@ -56,7 +64,7 @@ $(document).ready(function(){
 				$("#get_egresados").prop("value","Calcular egresados!");
 			},
 			error: function(err){
-				console.log(err)
+				//console.log(err)
 			},
 			success: function(r){
 				cabecera = "<tr class='cabecera_tabla'><td>Cohorte/Egreso</td>";
@@ -104,7 +112,7 @@ $(document).ready(function(){
 				modo_procesando(false);
 			},
 			error: function(err){
-				console.log(err)
+				//console.log(err)
 			},
 			success: function(r){
 				$("#tabla_desercion").empty();
@@ -143,11 +151,11 @@ $(document).ready(function(){
 	$("#txt_legajo_const_exa").on('keypress',function(e){
 		if(e.keyCode == 13 ){
 			e.preventDefault();
-			ultimos_examenes($("#select_carrera_const_examen").prop("value"), $("#txt_legajo_const_exa").prop("value"), 3);
+			ultimos_examenes($("#select_carrera_const_examen").prop("value"), $("#txt_legajo_const_exa").prop("value"), 5);
 		}
 	})
 	$("#cmd_const_examen").on("click",function(){
-		ultimos_examenes($("#select_carrera_const_examen").prop("value"), $("#txt_legajo_const_exa").prop("value"), 3);
+		ultimos_examenes($("#select_carrera_const_examen").prop("value"), $("#txt_legajo_const_exa").prop("value"), 5);
 	})
 	/* ---------------------------------------- ------------------ --------------------------------------------*/
 
@@ -348,7 +356,7 @@ $(document).ready(function(){
 								max_porcentaje = porc_actual;
 							}
 							if(porc_actual != 0 && ! isNaN(porc_actual)){
-								console.log(porc_actual);
+								//console.log(porc_actual);
 								suma_porcentajes += parseFloat(porc_actual);
 								anios_computados++;
 								if(porc_actual < min_porcentaje){
@@ -365,7 +373,7 @@ $(document).ready(function(){
 						}
 
 						porcentaje_promedio = (suma_porcentajes/anios_computados);
-						console.log(suma_porcentajes+" --- "+anios_computados);
+						//console.log(suma_porcentajes+" --- "+anios_computados);
 						$("#tabla_coneau").append("<tr class='info'><td>INSCRIPTOS</td>"+insc+"</tr>");
 						$("#tabla_coneau").append("<tr class='info'><td>REGULARIZARON</td>"+regu+"</tr>");
 						$("#tabla_coneau").append("<tr class='info'><td>PROMOCIONARON</td>"+promo+"</tr>");
@@ -439,7 +447,7 @@ function estado_tfg(legajo_tfg){
 		method: 'POST',
 		error: function(err){
 			alert("Error, revisar consola");
-			console.log(err.responseText);
+			//console.log(err.responseText);
 		},
 		success: function(r){
 			
@@ -532,7 +540,7 @@ function ultimos_examenes(carrera, legajo_const_exa, cantidad){
 		method: 'POST',
 		error: function(err){
 			alert("Legajo Inexistente o el alumno no es activo");
-			console.log(err);
+			//console.log(err);
 		},
 		success: function(r){
 			//console.log(r)
@@ -590,7 +598,7 @@ function ultimos_examenes(carrera, legajo_const_exa, cantidad){
 	})
 }
 
-/*function buscar_alcances(){
+function buscar_alcances(){
 	$('#select_alcances').children().remove();
 	$("#tabla_respuestas").children().remove();
 	$("#observaciones").children().remove();
@@ -599,16 +607,16 @@ function ultimos_examenes(carrera, legajo_const_exa, cantidad){
 		dataType: 'json',
 		method: 'POST',
 		error: function(err){
-			console.log(err)
+			//console.log(err)
 		},
 		success: function(r){
 			$.each(r, function (index, valor) {
 				$('#select_alcances').append($('<option value='+valor.alcance+'>'+valor.titulo+'</option>'));
 			});
-			encuestas_get_materias()
+			encuestas_get_materias();
 		}
 	})
-}*/
+}
 
 function encuestas_get_materias(){
 	$('#select_materias').children().remove();
@@ -884,10 +892,16 @@ function get_reporte_examenes(){
 		beforeSend: function(){$(".procesando").css("display","block")},
 		complete: function(){$(".procesando").css("display","none")},
 		error: function(err){
+
 			//$("body").append("<div>"+err.responseText+"</div>");
+			console.clear();
+			console.log('=================================================================');
 			console.log(err.responseText);
+			console.log('=================================================================');
 		},
 		success: function(r){
+			console.log(r)
+			
 			$("#tabla_resumen_turno_exa").css("display","block");
 			for(var i = 0; i < r.length; i++ ){
 				
@@ -905,6 +919,8 @@ function get_reporte_examenes(){
 			}			
 		}
 	}).complete(function(){
+			
+
 		$.ajax({
 			url: "./index.php/ajax/horarios_llamado",
 			data: {anio: $("#anio_examen").prop("value"),
@@ -915,10 +931,10 @@ function get_reporte_examenes(){
 			beforeSend: function(){$(".procesando").css("display","block")},
 			complete: function(){$(".procesando").css("display","none")},
 			error: function(err){
-				console.log(err)
+				//console.log(err)
 			},
 			success: function(horarios){
-				console.log(horarios);
+				//console.log(horarios);
 				$("#tabla_horarios_examen").css("display","block");
 				$("#titulo_horarios").css("display","block");
 				/*console.log(horarios);

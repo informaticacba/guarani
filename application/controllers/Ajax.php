@@ -66,6 +66,16 @@ class Ajax extends CI_Controller {
 		echo json_encode($this->Guarani_model->cert_pendientes());
 	}
 
+	public function get_alcances()
+	{
+		$alcances = $this->Guarani_model->get_alcances();
+		$a = array();
+		foreach($alcances as $alcance){
+			$a[] = array('alcance'=>$alcance['alcance'],'titulo'=>utf8_encode($alcance['titulo']));
+		}
+		echo json_encode($a);
+	}
+
 	public function encuestas_get_docentes(){
 		$id_alcance = $this->input->post("id_alcance");
 		$id_materia = $this->input->post("id_materia");
@@ -151,6 +161,7 @@ class Ajax extends CI_Controller {
 		if(count($resultados) > 0){
 			echo json_encode($resultados);
 		}else{
+			
 			echo json_encode(array("Error"=>json_last_error()));
 		} 
 	}
