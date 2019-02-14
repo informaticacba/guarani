@@ -221,7 +221,7 @@
 }, {
 	"codigos": ["I15"],
 	"materia": "ELECTRICIDAD Y MAGNETISMO",
-	"tiene_final": false,
+	"tiene_final": true,
 	"promocionable": true,
 	"tipo": "optativa"
 }, {
