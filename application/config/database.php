@@ -84,11 +84,11 @@ $db['32bits'] = array(
 	'save_queries' => TRUE
 );
 $db['linux'] = array(
-	'dsn'      => "informix:host=cabinfxagr.unne.local;service=9088;database=agr_v293;server=ol_agrarias; protocol=olsoctcp;EnableScrollableCursors=1",
+	'dsn'      => "informix:host=cabinfxagr.unne.local;service=9088;database=agr_v294;server=ol_agrarias; protocol=olsoctcp;EnableScrollableCursors=1",
 	'hostname' => 'cabinfxagr.unne.local',
 	'username' => 'dba',
 	'password' => 'jz012699',
-	'database' => 'agr_v293',
+	'database' => 'agr_v294',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
