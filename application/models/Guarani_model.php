@@ -37,18 +37,19 @@ class Guarani_model extends CI_Model {
 		
 		
 		$resultado=$this->db->query($consulta);
-		
+
 		$arr = $resultado->result_array();
 		if(count($arr)){
 			$datos = $arr[0];
 		}else{
 			return array();
 		}
-		
+
 		$datos['apellido'] =strtoupper(str_replace("Ñ","-n-", utf8_encode($datos['apellido']))); 
 		$datos['nombres'] = ucwords(strtolower(str_replace("Ñ","-n-",utf8_encode($datos['nombres'])))); 
 			
-		if(strlen($datos['nombres']) > 0){
+
+if(strlen($datos['nombres']) > 0){
 			return $datos;
 		}else{
 			return array();

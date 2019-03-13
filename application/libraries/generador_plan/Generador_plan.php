@@ -28,6 +28,7 @@ class Generador_plan{
 	}
 	private function get_plan()
 	{
+
 		switch ($this->carrera) {
 			case '01':
 				switch ($this->ingreso) {
@@ -35,34 +36,39 @@ class Generador_plan{
 						die('Raje!!! Alumno recontra viejo!');
 						break;
 					case ($this->ingreso >= 2002 && $this->ingreso < 2006):
-						$archivo_plan = base_url()."assets/json/planes/agr-2002.json"; 
+						$archivo_plan = "./assets/json/planes/agr-2002.json"; 
 						break;
 					case ($this->ingreso == 2006):
-						$archivo_plan = base_url()."assets/json/planes/agr-2006.json";
+
+						$archivo_plan = "./assets/json/planes/agr-2006.json";
 						break;
 					case ($this->ingreso > 2006 && $this->ingreso < 2013):
-						$archivo_plan = base_url()."assets/json/planes/agr-2006-intro.json"; 
+						$archivo_plan = "./assets/json/planes/agr-2006-intro.json"; 
 						break;
 					case ($this->ingreso >= 2013 && $this->ingreso < 2015):
-						$archivo_plan = base_url()."assets/json/planes/agr-2013.json";
+						$archivo_plan = "./assets/json/planes/agr-2013.json";
 						break;
 					case ($this->ingreso >= 2013):
-						$archivo_plan = base_url()."assets/json/planes/agr-2013-2015.json";
+						$archivo_plan = "./assets/json/planes/agr-2013-2015.json";
 						break;
 				}
 				break;
 			case '08':
 				switch ($this->ingreso) {
 					case ($this->ingreso >= 2016):
-						$archivo_plan = base_url()."assets/json/planes/ind-2016.json"; 
+						$archivo_plan = "./assets/json/planes/ind-2016.json"; 
 						break;
 				}
 				break;
 		}
 				
 		//obtengo la plantilla correspondiente
-		$archivo = file_get_contents($archivo_plan);
-		return json_decode(utf8_encode($archivo));
+	
+//echo $archivo_plan; die;	
+$archivo = file_get_contents($archivo_plan);
+//echo $archivo; die;		
+
+return json_decode(utf8_encode($archivo));
 	}
 
 	public function generar_reporte()
@@ -90,10 +96,13 @@ class Generador_plan{
 						<img src=\"".base_url()."assets/img/perm/logo_encabezado.png\" id=\"logo\">
 						<!-- <img src=\"".base_url()."assets/img/perm/logo_encabezado.png\" id=\"logo\"> -->
 						<p class=\"titulo centrado\">CARRERA ".$this->plan->carrera."</p>
-						<p class=\"titulo centrado\">PLAN DE ESTUDIOS ".$this->plan->plan;
+						<p class=\"titulo centrado\">PLAN DE ESTUDIOS 2002";
 		if($this->ingreso > 2006 && $this->ingreso < 2013){
 			echo " (Modif. 2006)";
 		}
+if($this->ingreso >= 2013){
+echo " (Modif. 2013)";
+}
 		echo "</p>";
 		echo"</div>
 					<div id=\"cuerpo_tabla\">

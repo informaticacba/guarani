@@ -179,15 +179,20 @@ class Inicio extends CI_Controller {
 	function generar_plan_estudios($legajo,$carrera,$siglas='mfa')
 	{
 		
-		$d = $this->Guarani_model->get_datos_personales($legajo,$carrera);
-		if( ! count($d)){
+		
+	$d = $this->Guarani_model->get_datos_personales($legajo,$carrera);
+		
+if( ! count($d)){
 			die("No se encontró el legajo ingresado en la carrera seleccionada. Prestá mas atención mi gente!");
 		}
 		$ingreso = explode('-',$d['fecha_ingreso']);
 
+
 		$reporte = new Generador_plan();
-		$reporte->set_datos($d['apellido'],$d['nombres'],$d['nro_documento'],$d['sexo'],$carrera,$ingreso[0],$siglas);
-		$reporte->generar_reporte();
+//var_dump($reporte); die;		
+$reporte->set_datos($d['apellido'],$d['nombres'],$d['nro_documento'],$d['sexo'],$carrera,$ingreso[0],$siglas);
+//echo 'llega'; die;		
+$reporte->generar_reporte();
 		
 		
 		
