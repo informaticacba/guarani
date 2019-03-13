@@ -45,7 +45,7 @@
 {"materia":"PROBABILIDAD Y ESTADISTICA","nombre_archivo":"probabilidad"},
 {"materia":"QUIMICA ANALITICA Y AGRICOLA","nombre_archivo":"quimicaanalitica"},
 {"materia":"QUIMICA GENERAL E INORGANICA","nombre_archivo":"quimicageneral"},
-{"materia":"QUIMICA GENERAL E INORGANICA (INDUSTRIAL)","nombre_archivo":"quim_gral_inorg_ind"},
+{"materia":"QUIMICA GENERAL E INORGANICA (INDUSTRIAL)","nombre_archivo":"quimicageneral_ind"},
 {"materia":"QUIMICA INDUSTRIAL","nombre_archivo":"quimica_industrial"},
 {"materia":"QUIMICA ORGANICA Y BIOLOGICA","nombre_archivo":"quimicaorganica"},
 {"materia":"SILVICULTURA","nombre_archivo":"silvicultura"},
