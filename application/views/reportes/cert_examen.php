@@ -57,7 +57,7 @@
 </head>
 <body>
 	<div id="contenedor">
-		<center><img src="<?php echo base_url(); ?>assets/img/perm/membrete.png" alt="Facultad de Ciencias Agrarias - UNNE" width='600mm' height="140mm;"></center>
+		<center><img src="<?php echo base_url(); ?>assets/img/perm/logo_encabezado.png" alt="Facultad de Ciencias Agrarias - UNNE" width='600mm' height="140mm;"></center>
 		
 		<div id="cuerpo">
 			<p>La que suscribe <b>D</b>irectora <b>G</b>esti&oacute;n <b>E</b>studios de la <b>F</b>ACULTAD <b>D</b>E <b>C</b>IENCIAS <b>A</b>GRARIAS dependiente de la <b>UNNE, HACE CONSTAR Que: <?php echo str_replace(array("_","-N-"),array(" ","Ñ"),strtoupper($apellido)); ?>, <?php echo ucwords(strtolower(str_replace(array("_","-N-"),array(" ","Ñ"),strtoupper($nombres)))); ?> (D.N.I. Nº <?php echo substr($dni, 0,2).".".substr($dni, 2,3).".".substr($dni, 5,3); ?>), Legajo Nº <?php echo $legajo; ?></b>, alumno/a de la carrera <b>“<?php echo $carrera; ?>”</b> ha rendido la asignatura <b>“<?php echo str_replace("_"," ",strtoupper($materia)); ?>”</b> el día <?php echo $dia; ?> de <?php echo $meses[$mes-1]; ?> del año <?php echo $anio; ?> con nota <?php echo $escala[$nota]; ?> (<?php echo $nota; ?>).-</p>
