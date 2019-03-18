@@ -57,7 +57,7 @@
 </head>
 <body>
 	<div id="contenedor">
-		<center><img src="<?php echo base_url(); ?>assets/img/perm/membrete.png" alt="Facultad de Ciencias Agrarias - UNNE" width='600mm' height="140mm;"></center>
+		<center><img src="<?php echo base_url(); ?>assets/img/perm/logo_encabezado.png" alt="Facultad de Ciencias Agrarias - UNNE" width='600mm' height="100mm;"></center>
 		<div id="destinatario">
 			<p>Señor Decano</p>
 			<p>Ing. Agr. (Dr.) Mario Hugo Urbani</p>
