@@ -101,6 +101,13 @@
 	"promocionable": false,
 	"tipo": "seminario",
 	"hora_pref_final": "08:00"
+},  {
+	"codigos": ["I27"],
+	"materia": "CIENCIA DE LOS MATERIALES",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
 }, {
 	"codigos": ["104", "104."],
 	"materia": "CITRICULTURA",
@@ -113,6 +120,13 @@
 	"tiene_final": false,
 	"promocionable": true,
 	"tipo": "optativa"
+}, {
+	"codigos": ["I29"],
+	"materia": "CONSTRUCCIONES Y MONTAJES INDUSTRIALES",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
 }, {
 	"codigos": ["147", "147."],
 	"materia": "COOPERATIVISMO AGRARIO",
@@ -205,6 +219,13 @@
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
 }, {
+	"codigos": ["I25"],
+	"materia": "ECONOMIA POLITICA (INDUSTRIAL)",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+}, {
 	"codigos": ["25", "74", "78."],
 	"materia": "ECONOMIA Y SOCIOLOGIA AGRARIA",
 	"tiene_final": true,
@@ -225,6 +246,13 @@
 	"promocionable": true,
 	"tipo": "optativa"
 }, {
+	"codigos": ["I28"],
+	"materia": "ELECTROTECNIA Y MAQUINAS ELECTRICAS",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+}, {
 	"codigos": ["111", "111."],
 	"materia": "ENFERMEDADES DE LOS CULTIVOS REGIONALES DEL NEA",
 	"tiene_final": false,
@@ -237,6 +265,13 @@
 	"promocionable": true,
 	"tipo": "optativa"
 }, {
+	"codigos": ["I20"],
+	"materia": "ESTATICA Y RESISTENCIA DE MATERIALES",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},{
 	"codigos": ["133", "133."],
 	"materia": "FERTILIDAD DE SUELOS",
 	"tiene_final": false,
@@ -363,6 +398,13 @@
 	"promocionable": false,
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
+},{
+	"codigos": ["I24"],
+	"materia": "INGLES III",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
 }, {
 	"codigos": ["129", "129."],
 	"materia": "INTRODUCCION A LA AGROBIOTECNOLOGIA",
@@ -382,6 +424,13 @@
 	"promocionable": true,
 	"tipo": "obligatoria"
 },{
+	"codigos": ["I23"],
+	"materia": "INVESTIGACION OPERATIVA",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},{
 	"codigos": ["117", "117."],
 	"materia": "MANEJO DE RECURSOS FORRAJEROS",
 	"tiene_final": false,
@@ -398,6 +447,13 @@
 	"materia": "MANEJO Y CONSERVACION DE SUELOS",
 	"tiene_final": true,
 	"promocionable": true,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+}, {
+	"codigos": ["I22"],
+	"materia": "MAQUINAS INDUSTRIALES",
+	"tiene_final": true,
+	"promocionable": false,
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
 }, {
@@ -511,6 +567,13 @@
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
 }, {
+	"codigos": ["I21"],
+	"materia": "ORGANIZACION DE LA PRODUCCION",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+}, {
 	"codigos": ["139", "139."],
 	"materia": "PASTURAS CULTIVADAS",
 	"tiene_final": false,
@@ -537,6 +600,13 @@
 }, {
 	"codigos": ["I12"],
 	"materia": "PROBABILIDAD Y ESTADISTICA",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+}, {
+	"codigos": ["I26"],
+	"materia": "PROCESOS INDUSTRIALES",
 	"tiene_final": true,
 	"promocionable": false,
 	"tipo": "obligatoria",
@@ -689,76 +759,6 @@
 }, {
 	"codigos": ["34", "79", "80."],
 	"materia": "ZOOTECNIA",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I20"],
-	"materia": "ESTATICA Y RESISTENCIA DE MATERIALES",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I21"],
-	"materia": "ORGANIZACION DE LA PRODUCCION",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I22"],
-	"materia": "MAQUINAS INDUSTRIALES",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I23"],
-	"materia": "INVESTIGACION OPERATIVA",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I24"],
-	"materia": "INGLES III",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I25"],
-	"materia": "ECONOMIA POLITICA (INDUSTRIAL)",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I26"],
-	"materia": "PROCESOS INDUSTRIALES",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I27"],
-	"materia": "CIENCIA DE LOS MATERIALES",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I28"],
-	"materia": "ELECTROTECNIA Y MAQUINAS ELECTRICAS",
-	"tiene_final": true,
-	"promocionable": false,
-	"tipo": "obligatoria",
-	"hora_pref_final": "08:00"
-}, {
-	"codigos": ["I29"],
-	"materia": "CONSTRUCCIONES Y MONTAJES INDUSTRIALES",
 	"tiene_final": true,
 	"promocionable": false,
 	"tipo": "obligatoria",
