@@ -29,7 +29,7 @@
 			padding: 0mm 20mm 0mm 20mm;
 		}
 		#cuerpo p{
-			text-indent: 30mm;
+			text-indent: 68mm;
 			word-wrap: break-word;
 			line-height: 10mm;
 			text-align: justify;
