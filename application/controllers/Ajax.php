@@ -8,15 +8,15 @@ class Ajax extends CI_Controller {
 	}
 
 
-	public function condicion_tfg($legajo){
-		$nro_inscripcion = $this->Guarani_model->get_nro_inscripcion($legajo);
-		$requisitos_adeuda = $this->Guarani_model->requisitos_adeuda($nro_inscripcion);		
-		$datos_personales = $this->Guarani_model->get_datos_personales($legajo);
-		$obligatorias = $this->Guarani_model->cant_mat_obligatorias($legajo);
-		$optativas = $this->Guarani_model->cant_mat_optativas($legajo);
-		$tercer_anio = $this->Guarani_model->tercer_anio_completo($legajo);
-		$regular = $this->Guarani_model->es_regular($legajo);
-		$calidad = $this->Guarani_model->get_calidad($legajo);
+	public function condicion_tfg($legajo,$carrera){
+		$nro_inscripcion = $this->Guarani_model->get_nro_inscripcion($legajo,$carrera);
+		$requisitos_adeuda = $this->Guarani_model->requisitos_adeuda($nro_inscripcion,$carrera);		
+		$datos_personales = $this->Guarani_model->get_datos_personales($legajo,$carrera);
+		$obligatorias = $this->Guarani_model->cant_mat_obligatorias($legajo,$carrera);
+		$optativas = $this->Guarani_model->cant_mat_optativas($legajo,$carrera);
+		$tercer_anio = $this->Guarani_model->tercer_anio_completo($legajo,$carrera);
+		$regular = $this->Guarani_model->es_regular($legajo,$carrera);
+		$calidad = $this->Guarani_model->get_calidad($legajo, $carrera);
 		$respuesta = array("nro_inscripcion"   => $nro_inscripcion,
 						   "legajo"            => $legajo,
 						   "datos_personales"  => $datos_personales,
