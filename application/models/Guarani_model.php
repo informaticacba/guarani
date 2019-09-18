@@ -257,7 +257,7 @@ if(strlen($datos['nombres']) > 0){
 		
 	}
 
-	public function es_regular($legajo,$carrera){
+	public function es_regular($legajo,$carrera='01'){
 		$consulta= "select first 1 regular from sga_alumnos where legajo = '$legajo' and carrera = '$carrera'";
 		// obtenermos los resultados
 		$resultado=$this->db->query($consulta);
@@ -271,7 +271,7 @@ if(strlen($datos['nombres']) > 0){
 		
 	}
 
-	public function get_calidad($legajo, $carrera){
+	public function get_calidad($legajo, $carrera='01'){
 		$consulta= "select first 1 calidad from sga_alumnos where legajo = '$legajo' and carrera = '$carrera'";
 		// obtenermos los resultados
 		$resultado=$this->db->query($consulta);
