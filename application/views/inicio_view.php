@@ -38,7 +38,12 @@
 			</ul>
 			<div id="tfg">
 				<hr>
-				Legajo: <input type="text" name="legajo_tfg" id="txt_legajo_tfg"><input type="button" id="cmd_cant_materias" value="Buscar">
+				Legajo: <input type="text" name="legajo_tfg" id="txt_legajo_tfg">
+				<select name="carrera_tfg" id="carrera_tfg">
+					<option value="01">Agronomía</option>
+					<option value="08">Industrial</option>
+				</select>
+				<input type="button" id="cmd_cant_materias" value="Buscar">
 				<hr>
 				<div class="centrado" id="datos_personales"></div>
 				<table>

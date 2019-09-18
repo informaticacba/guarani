@@ -57,17 +57,17 @@ if(strlen($datos['nombres']) > 0){
 	}
 	
 
-	public function cant_mat_optativas($legajo){
-		$plan = $this->get_plan_alumno($legajo);
+	public function cant_mat_optativas($legajo,$carrera='01'){
+		//$plan = $this->get_plan_alumno($legajo);
 		$consulta= "select count(*)
 					from vw_hist_academica as vw
 					where vw.materia in (
 					    select materia_optativa 
 					    from sga_mat_genericas 
-					    where materia_generica in ('87','88.') and materia_optativa <> 'IDIOM'
+					    where materia_generica in ('87','88.','IOCUA','IOQUI') and materia_optativa <> 'IDIOM'
 					)
 					and vw.legajo = '$legajo'
-					--and vw.carrera = '01'
+					and vw.carrera = '$carrera'
 					and vw.resultado = 'A'";
 		//echo $consulta; die;
 		$resultado=$this->db->query($consulta);
@@ -92,7 +92,7 @@ if(strlen($datos['nombres']) > 0){
 		
 	}
 
-	public function cant_mat_obligatorias($legajo){
+	public function cant_mat_obligatorias($legajo,$carrera='01'){
 		$plan = $this->get_plan_alumno($legajo);
 		//-------------------------------------- OBLIGATORIAS ----------------------------------------- 
 		$consulta= "select count(*) 
@@ -100,10 +100,10 @@ if(strlen($datos['nombres']) > 0){
 					where legajo = '$legajo'
 					and materia not in (
 						select materia_optativa 
-						from sga_mat_genericas where materia_generica in ('87','88','89','88.','89.','90.')
+						from sga_mat_genericas where materia_generica in ('87','88','89','88.','89.','90.','IOCUA','IOQUI')
 					)
 					and resultado = 'A'
-					and carrera = 01";
+					and carrera = '".$carrera."'";
 		
 		$resultado=$this->db->query($consulta);
 		$arr = $resultado->result_array();
@@ -235,15 +235,16 @@ if(strlen($datos['nombres']) > 0){
 			return $resultado->result_array(); 
 	}
 
-	public function tercer_anio_completo($legajo){
+	public function tercer_anio_completo($legajo,$carrera){
 		
 		//-------------------------------------- TERCER AÑO COMPLETO?? ----------------------------------------- 
-		$consulta= "select count(*)
-					from vw_hist_academica 
-					where legajo = '9450'
-					and materia in ('20','63','64.','17','64','65.','16','65','66.','22','66','67.','11','67','68.','68','69.','14','69','70.','26','70','71.','72','73.','71','72.')
-					and resultado = 'A'";
-		
+		$consulta= "select count(*) from vw_hist_academica where legajo = '$legajo'	and resultado = 'A' and ";
+		if($carrera == '01'){
+			$consulta .= "materia in ('20','63','64.','17','64','65.','16','65','66.','22','66','67.','11','67','68.','68','69.','14','69','70.','26','70','71.','72','73.','71','72.') ";
+		}
+		if($carrera == '08'){
+			$consulta .= "materia in ('I20','I21','I22','I23','I24','I25','I26','I27','I28','I29')";
+		}
 		$resultado=$this->db->query($consulta);
 		$completo = $resultado->result_array(); 
 		$completo = array_shift($completo);
@@ -255,8 +256,8 @@ if(strlen($datos['nombres']) > 0){
 		
 	}
 
-	public function es_regular($legajo){
-		$consulta= "select first 1 regular from sga_alumnos where legajo = $legajo";
+	public function es_regular($legajo,$carrera){
+		$consulta= "select first 1 regular from sga_alumnos where legajo = '$legajo' and carrera = '$carrera'";
 		// obtenermos los resultados
 		$resultado=$this->db->query($consulta);
 
@@ -269,8 +270,8 @@ if(strlen($datos['nombres']) > 0){
 		
 	}
 
-	public function get_calidad($legajo){
-		$consulta= "select first 1 calidad from sga_alumnos where legajo = $legajo";
+	public function get_calidad($legajo, $carrera){
+		$consulta= "select first 1 calidad from sga_alumnos where legajo = '$legajo' and carrera = '$carrera'";
 		// obtenermos los resultados
 		$resultado=$this->db->query($consulta);
 		$calidad = $resultado->result_array(); 
@@ -943,20 +944,20 @@ if(strlen($datos['nombres']) > 0){
 		}
     }
 
-    public function get_nro_inscripcion($legajo){
-    	$consulta = "select first 1 nro_inscripcion from sga_alumnos where legajo = '".$legajo."'";
+    public function get_nro_inscripcion($legajo,$carrera = '01'){
+    	$consulta = "select first 1 nro_inscripcion from sga_alumnos where legajo = '".$legajo."' and carrera = '".$carrera."'";
     	
     	$resultado = $this->db->query($consulta);
     	$agr = array_shift($resultado->result_array()[0]);
     	return $agr;
     }
 
-    public function requisitos_adeuda($nro_inscripcion){
+    public function requisitos_adeuda($nro_inscripcion,$carrera='01'){
     	$consulta = "select count(*)
 					from sga_req_cumplidos as req 
 					where req.nro_inscripcion = '".$nro_inscripcion."'
 					and (req.exceptuado = 'S' or req.fecha_presentacion is null)
-					and req.carrera = '01'
+					and req.carrera = '".$carrera."'
 					and req.obligatoriedad = 'S'";
 		$resultado = $this->db->query($consulta);
 		$cantidad = $resultado->result_array();
