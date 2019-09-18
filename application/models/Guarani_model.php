@@ -235,16 +235,17 @@ if(strlen($datos['nombres']) > 0){
 			return $resultado->result_array(); 
 	}
 
-	public function tercer_anio_completo($legajo,$carrera){
+	public function tercer_anio_completo($legajo,$carrera='01'){
 		
 		//-------------------------------------- TERCER AÑO COMPLETO?? ----------------------------------------- 
-		$consulta= "select count(*) from vw_hist_academica where legajo = '$legajo'	and resultado = 'A' and ";
+		$consulta = "select count(*) from vw_hist_academica where legajo = '$legajo'	and resultado = 'A' and ";
 		if($carrera == '01'){
 			$consulta .= "materia in ('20','63','64.','17','64','65.','16','65','66.','22','66','67.','11','67','68.','68','69.','14','69','70.','26','70','71.','72','73.','71','72.') ";
 		}
 		if($carrera == '08'){
-			$consulta .= "materia in ('I20','I21','I22','I23','I24','I25','I26','I27','I28','I29')";
+			$consulta .= "materia in ('I20','I21','I22','I23','I24','I25','I26','I27','I28','I29') ";
 		}
+		
 		$resultado=$this->db->query($consulta);
 		$completo = $resultado->result_array(); 
 		$completo = array_shift($completo);
@@ -946,7 +947,6 @@ if(strlen($datos['nombres']) > 0){
 
     public function get_nro_inscripcion($legajo,$carrera = '01'){
     	$consulta = "select first 1 nro_inscripcion from sga_alumnos where legajo = '".$legajo."' and carrera = '".$carrera."'";
-    	
     	$resultado = $this->db->query($consulta);
     	$agr = array_shift($resultado->result_array()[0]);
     	return $agr;

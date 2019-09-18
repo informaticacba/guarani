@@ -40,7 +40,7 @@ $(document).ready(function(){
 		if($("#txt_legajo_tfg").prop("value").length == 0){
 			return false;
 		}
-		estado_tfg($("#txt_legajo_tfg").prop("value"),$("#carrera_tfg"));
+		estado_tfg($("#txt_legajo_tfg").prop("value"),$("#carrera_tfg").prop('value'));
 	}
 	/* ---------------------------------------- ------------------ --------------------------------------------*/
 
@@ -442,12 +442,12 @@ function no_disponible(){
 function estado_tfg(legajo_tfg,carrera_tfg){
 	$.ajax({
 		url: "./index.php/ajax/condicion_tfg/"+legajo_tfg+"/"+carrera_tfg,
-		data: {legajo_tfg: legajo_tfg },
+		data: {legajo_tfg: legajo_tfg, carrera_tfg: carrera_tfg },
 		dataType: 'json',
 		method: 'POST',
 		error: function(err){
-			alert("Error, revisar consola");
-			//console.log(err.responseText);
+			alert("Ocurrió un error. Detalles en consola");
+			console.log(err.responseText);
 		},
 		success: function(r){
 			
