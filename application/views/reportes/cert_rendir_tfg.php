@@ -72,7 +72,7 @@
 			<p>Sirva la presente de atenta nota.-</p>
 		</div>
 		<div id="firma">
-			<p><b>Dirección Gestión Estudios</b>, <?php echo date('d'); ?> de <?php echo $meses[date('n')-1]; ?> de <?php echo date("Y"); ?>.-</p>
+			<p><b><i>Dirección Gestión Estudios</b>, <?php echo date('d'); ?> de <?php echo $meses[date('n')-1]; ?> de <?php echo date("Y"); ?>.-</i></p>
 			<p id="linea_firma">______________________</p>
 		</div>
 		<div id="autor">
