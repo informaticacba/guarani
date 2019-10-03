@@ -75,13 +75,13 @@ if(strlen($datos['nombres']) > 0){
 		$cant = array_shift($arr);
 		$optativas['produccion_vegetal'] = array_shift($cant);
 
-		$consulta = str_replace("('87','88.')","('88','89.')",$consulta); //Produccion Animal
+		$consulta = str_replace("'87','88.'","'88','89.'",$consulta); //Produccion Animal
 		$resultado=$this->db->query($consulta);
 		$arr = $resultado->result_array();
 		$cant = array_shift($arr);
 		$optativas['produccion_animal'] = array_shift($cant);
 
-		$consulta = str_replace("('88','89.')","('89','90.')",$consulta); //Otras Areas
+		$consulta = str_replace("'88','89.'","'89','90.'",$consulta); //Otras Areas
 		$resultado=$this->db->query($consulta);
 		$arr = $resultado->result_array();
 		$cant = array_shift($arr);
