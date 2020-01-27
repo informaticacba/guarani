@@ -52,7 +52,7 @@
 }, {
 	"codigos": ["92."],
 	"materia": "ANATOMIA Y FISIOLOGIA ANIMAL",
-	"tiene_final": false,
+	"tiene_final": true,
 	"promocionable": true,
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
