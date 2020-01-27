@@ -91,9 +91,6 @@ class Inicio extends CI_Controller {
 	}
 
 	public function pdf_inscritos_examen(){
-		//obtengo una lista de los nombres que debe tener cada archivo PDF
-		$nombres_archivo = $this->Guarani_model->get_nombres_archivos();
-
 		//obtengo los codigos de la materia, el turno y llamado seleccionados por el usuario
 		$codigos_materia = $this->input->post("insc_materia");
 		$llamado = $this->input->post("insc_llamado");
@@ -101,14 +98,14 @@ class Inicio extends CI_Controller {
 		//echo $codigos_materia; die;
 		//Obtengo el nombre de la materia en funcion a los codigos seleccionados
 
-		$materia = $this->Guarani_model->get_nombre_materia($codigos_materia);
-
 		//obtengo los inscritos correspondientes
 		$inscritos = $this->Guarani_model->get_inscritos_examen($codigos_materia,$turno,$llamado);
-		//var_dump($nombres_archivo); die;
-		//var_dump($materia); die;
-		//var_dump($nombres_archivo[$materia]);
-		$nombre_archivo = $nombres_archivo[$materia];
+		
+		//obtengo una lista de los nombres que debe tener cada archivo PDF
+		$materia = $this->Guarani_model->get_materia($codigos_materia);
+		$nombre_archivo = $materia->nombre_archivo;
+		$materia = $materia->materia;
+		//$nombre_archivo = $nombres_archivo[$materia];
 		//echo $materia; die;
 
 		/*$inscritos = array(

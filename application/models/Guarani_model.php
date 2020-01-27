@@ -362,6 +362,19 @@ if(strlen($datos['nombres']) > 0){
 		return $nombres;
 	}
 
+	public function get_materia($codigos_materia){
+		$codigos = str_replace(array('(',')','"','\''), '', $codigos_materia);
+		$codigos = explode(',',$codigos);
+
+		$archivo = file_get_contents("./assets/nombres_archivo.json");
+		$arr = json_decode($archivo);
+		foreach ($arr as $key => $value) {
+			if($value->codigos == $codigos){
+				return $value;
+			}
+		}
+	}
+
 	//obtiene los docentes de una determinada materia
 	public function encuestas_get_docentes($id_alcance, $id_materia){
 		$consulta = "select distinct doc.legajo, per.apellido, per.nombres
