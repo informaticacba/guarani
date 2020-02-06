@@ -93,7 +93,7 @@ return json_decode(utf8_encode($archivo));
 		echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"".base_url()."assets/css/estilos_plan_estudios.css\">
 				<div id=\"contenedor_plan\">
 					<div id=\"cabecera\">
-						<img src=\"".base_url()."assets/img/perm/logo_encabezado.png\" id=\"logo\">
+						<img src=\"".base_url()."assets/img/perm/logo_encabezado_2020.png\" id=\"logo\">
 						<!-- <img src=\"".base_url()."assets/img/perm/logo_encabezado.png\" id=\"logo\"> -->
 						<p class=\"titulo centrado\">CARRERA ".$this->plan->carrera."</p>
 						<p class=\"titulo centrado\">PLAN DE ESTUDIOS 2002";
