@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://despachofca.unne.local/guarani/';
+$config['base_url'] = 'http://despachofca.unne.local:82/';
 
 /*
 |--------------------------------------------------------------------------
