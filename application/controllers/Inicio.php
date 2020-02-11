@@ -186,26 +186,54 @@ if( ! count($d)){
 
 
 		$reporte = new Generador_plan();
-//var_dump($reporte); die;		
+//var_dump($reporte); die;
 $reporte->set_datos($d['apellido'],$d['nombres'],$d['nro_documento'],$d['sexo'],$carrera,$ingreso[0],$siglas);
-//echo 'llega'; die;		
+//echo 'llega'; die;
 $reporte->generar_reporte();
-		
-		
-		
 	}
 
 	private function subir_archivo($nombre_archivo){
-		$connection = ssh2_connect('10.30.1.97', 22);
+		$srcFile = '/var/www/html/guarani/assets/pdfs/examenes/'.$nombre_archivo.'.pdf';
+		$dstFile = '/mnt/datos/vhosts/agr/www/anuncios/assets/pdfs/examenes/'.$nombre_archivo.'.pdf';
 
-		if(ssh2_auth_password($connection, 'jvilotta', 'jvilotta1280')){
-			echo "connected\n";
-			ssh2_scp_send($connection, "./assets/pdfs/examenes/".$nombre_archivo.".pdf", "/mnt/datos/vhosts/agr/www/anuncios/assets/pdfs/examenes/".$nombre_archivo.".pdf");
-			echo "done\n";
-		} else {
-			echo "connection failed\n";
+		$host = '10.30.1.97';
+		$port = '22';
+		$username = 'jvilotta';
+		$password = 'jvilotta1280';
+
+		// Create connection the the remote host
+		$conn = ssh2_connect($host, $port);
+		ssh2_auth_password($conn, $username, $password);
+
+		// Create SFTP session
+		$sftp = ssh2_sftp($conn);
+
+		$sftpStream = fopen('ssh2.sftp://'.$sftp.$dstFile, 'w');
+
+		try {
+
+			if (!$sftpStream) {
+				throw new Exception("Could not open remote file: $dstFile");
+			}
+
+			$data_to_send = file_get_contents($srcFile);
+
+			if ($data_to_send === false) {
+				throw new Exception("Could not open local file: $srcFile.");
+			}
+
+			if (fwrite($sftpStream, $data_to_send) === false) {
+				throw new Exception("Could not send data from file: $srcFile.");
+			}
+
+			fclose($sftpStream);
+
+		} catch (Exception $e) {
+			error_log('Exception: ' . $e->getMessage());
+			fclose($sftpStream);
 		}
-		
+		echo "Listo! Puede cerrar esta pestaña";
+
 	}
 
 	public function pdf_const_ingresante($legajo, $nro_inscripcion, $tipodoc, $nro_documento, $apellido, $nombres, $sexo, $tipo_constancia){
