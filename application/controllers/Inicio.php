@@ -196,7 +196,15 @@ $reporte->generar_reporte();
 	}
 
 	private function subir_archivo($nombre_archivo){
-		
+		$connection = ssh2_connect('10.30.1.97', 22);
+
+		if(ssh2_auth_password($connection, 'jvilotta', 'jvilotta1280')){
+			echo "connected\n";
+			ssh2_scp_send($connection, "./assets/pdfs/examenes/".$nombre_archivo.".pdf", "/mnt/datos/vhosts/agr/www/anuncios/assets/pdfs/examenes/".$nombre_archivo.".pdf");
+			echo "done\n";
+		} else {
+			echo "connection failed\n";
+		}
 		
 	}
 
