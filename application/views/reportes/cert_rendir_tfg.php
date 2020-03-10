@@ -65,7 +65,7 @@
 		</div>
 		<div id="cuerpo">
 			<p>
-			Cumplo en informar a Usted que <?php echo ($sexo == '1')? 'el alumno':'la alumna'; ?><b> <?php echo ($sexo == '1')? 'Sr.':'Srta.'; ?> <?php echo strtoupper(str_replace(array("_","-N-"),array(" ","Ñ"),$apellido)); ?>, <?php echo ucwords(strtolower(str_replace(array("_","-N-"),array(" ","ñ"),$nombres))); ?> (D.N.I.: <?php echo substr($dni, 0,2).".".substr($dni, 2,3).".".substr($dni, 5,3); ?>), <?php echo ($sexo == '1')? 'alumno':'alumna'; ?> 
+			Cumplo en informar a Usted que <b> <?php echo ($sexo == '1')? 'el Sr.':'la Srta.'; ?> <?php echo strtoupper(str_replace(array("_","-N-"),array(" ","Ñ"),$apellido)); ?>, <?php echo ucwords(strtolower(str_replace(array("_","-N-"),array(" ","ñ"),$nombres))); ?> (D.N.I.: <?php echo substr($dni, 0,2).".".substr($dni, 2,3).".".substr($dni, 5,3); ?>), <?php echo ($sexo == '1')? 'alumno':'alumna'; ?> 
 			<?php echo ($sexo == '1')? 'activo':'activa'; ?> – regular</b> se encuentra en condiciones de rendir el 
 			<b>T</b>rabajo <b>F</b>inal de <b>G</b>raduación <b>(<?php echo ucfirst(strtolower($modalidad)); ?>)</b> al tener aprobada la totalidad de las asignaturas de la carrera.-
 			</p>
