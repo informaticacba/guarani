@@ -62,7 +62,16 @@
 	"tiene_final": false,
 	"promocionable": true,
 	"tipo": "optativa"
-}, {
+}, 
+{
+	"codigos": ["I38"],
+	"materia": "AUTOMATIZACION INDUSTRIAL",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},    
+{
 	"codigos": ["145", "145."],
 	"materia": "BIOFERTILIZACION Y ABONOS ORGANICOS",
 	"tiene_final": false,
@@ -318,7 +327,16 @@
 	"tiene_final": false,
 	"promocionable": true,
 	"tipo": "optativa"
-}, {
+}, 
+{
+	"codigos": ["I41"],
+	"materia": "FORMULACION Y EVALUACION DE PROYECTOS",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},    
+{
 	"codigos": ["23", "75", "76."],
 	"materia": "FORRAJICULTURA",
 	"tiene_final": true,
@@ -351,7 +369,16 @@
 	"tiene_final": false,
 	"promocionable": true,
 	"tipo": "optativa"
-}, {
+}, 
+{
+	"codigos": ["I39"],
+	"materia": "GESTION INTEGRAL DE LA CALIDAD",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},    
+{
 	"codigos": ["127", "127."],
 	"materia": "GESTION Y EVALUACION DE IMPACTOS AMBIENTALES",
 	"tiene_final": false,
@@ -370,21 +397,88 @@
 	"promocionable": false,
 	"tipo": "obligatoria",
 	"hora_pref_final": "16:00"
-}, {
+}, 
+{
+	"codigos": ["I40"],
+	"materia": "HIGIENE Y SEGURIDAD INDUSTRIAL",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},    
+{
 	"codigos": ["32", "84", "85."],
 	"materia": "HORTICULTURA",
 	"tiene_final": true,
 	"promocionable": false,
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
-}, {
+},
+{
+	"codigos": ["I32"],
+	"materia": "INDUSTRIA DE LA MADERA",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},
+{
+	"codigos": ["I34"],
+	"materia": "INDUSTRIA DE VEGETALES I",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},
+{
+	"codigos": ["I36"],
+	"materia": "INDUSTRIA DE VEGETALES II",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},
+{
+	"codigos": ["I37"],
+	"materia": "INDUSTRIA DE VEGETALES III",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},    
+{
+	"codigos": ["I33"],
+	"materia": "INDUSTRIA PECUARIA",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},  
+{
 	"codigos": ["I06"],
 	"materia": "INFORMATICA Y PROGRAMACION",
 	"tiene_final": true,
 	"promocionable": false,
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
-}, {
+},
+{
+	"codigos": ["I31"],
+	"materia": "INGENIERIA AMBIENTAL",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},  
+{
+	"codigos": ["I30"],
+	"materia": "INGENIERIA LEGAL",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},  
+{
 	"codigos": ["I05"],
 	"materia": "INGLES I",
 	"tiene_final": true,
@@ -405,7 +499,16 @@
 	"promocionable": false,
 	"tipo": "obligatoria",
 	"hora_pref_final": "08:00"
-}, {
+},
+{
+	"codigos": ["I35"],
+	"materia": "INGLES IV",
+	"tiene_final": true,
+	"promocionable": false,
+	"tipo": "obligatoria",
+	"hora_pref_final": "08:00"
+},
+ {
 	"codigos": ["129", "129."],
 	"materia": "INTRODUCCION A LA AGROBIOTECNOLOGIA",
 	"tiene_final": false,
