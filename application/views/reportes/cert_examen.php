@@ -46,6 +46,15 @@
 			margin: 15mm 0mm 0mm 30mm;
 			font-style: italic;
 		}
+		#firma_director{
+			position: relative;
+			top: 135px;
+			left: 380px;
+		}
+		#sello_director{
+			position: relative;
+			left: 430px;
+		}
 		
 	</style>
 
@@ -64,8 +73,9 @@
 			<p>A pedido de parte interesada y a los efectos de ser presentada ante las autoridades que lo requieran, se extiende la presente que sella y firma en la ciudad de Corrientes, el día <?php echo date("d"); ?> de <?php echo $meses[date('n')-1]; ?> de <?php echo date("Y"); ?>.-</p>
 		</div>
 		<div id="firma">
-			
+			<img src="<?php echo base_url(); ?>/assets/img/perm/firma_director.png" id="firma_director">
 			<p id="linea_firma">______________________</p>
+			<img src="<?php echo base_url(); ?>/assets/img/perm/sello_director.png" id="sello_director">
 		</div>
 		<div id="autor">
 			<?php 
@@ -77,7 +87,7 @@
 			?>
 		</div>
 	</div>
-	<?php include("btn_imprimir.html"); ?>	
+	<?php //include("btn_imprimir.html"); ?>	
 </body>
 
 
