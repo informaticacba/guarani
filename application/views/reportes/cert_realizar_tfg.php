@@ -35,6 +35,7 @@
 			text-align: justify;
 			font-style: italic;
 		}
+		
 		#firma{
 			padding: 0mm 30mm 0mm 30mm;
 		}
@@ -42,14 +43,24 @@
 			text-align: right;
 		}
 		#linea_firma{
-			margin-top: 30mm;
+			margin-top: 20mm;
 		}
 		#autor{
 			font-size: 0.8em;
 			margin: 15mm 0mm 0mm 30mm;
 			font-style: italic;
 		}
-	</style>
+		#firma_director{
+			position: relative;
+			top: 135px;
+			left: 380px;
+		}
+		#sello_director{
+			position: relative;
+			left: 430px;
+		}
+			
+</style>
 	<?php extract($_GET); ?>
 	<?php $meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'); ?>
 	<?php //echo $modalidad; die; ?>
@@ -74,7 +85,10 @@
 		</div>
 		<div id="firma">
 			<p><b><i>Dirección Gestión Estudios</b>, <?php echo date('d'); ?> de <?php echo $meses[date('n')-1]; ?> de <?php echo date("Y"); ?>.-</i></p>
+			<img src="<?php echo base_url(); ?>/assets/img/perm/firma_director.png" id="firma_director">
 			<p id="linea_firma">______________________</p>
+			<img src="<?php echo base_url(); ?>/assets/img/perm/sello_director.png" id="sello_director">
+			<!-- <p id="linea_firma">______________________</p> -->
 		</div>
 		<div id="autor">
 			<?php 
