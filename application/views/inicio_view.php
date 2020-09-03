@@ -24,6 +24,7 @@
 				<li><a href="#tfg">Condiciones TFG</a></li>
 				<li><a href="#const_examen">Const. Examen</a></li>
 				<li><a href="#plan_estudios">Plan de Estudios</a></li>
+				<li><a href="#correlativas_alumno">Correlativas Alumno</a></li>
 				<li><a href="#encuestas">Encuestas</a></li>
 				<li><a href="#coneau">CONEAU</a></li>
 				<li><a href="#cursadas">Result. Cursadas</a></li>
@@ -364,6 +365,55 @@
 				<table id="tabla_desercion" border=1>
 					
 				</table>
+			</div>
+
+			<div id="correlativas_alumno">
+				<div class="formulario">
+					<div class="contenedor_ef">
+						<label for="legajo">Legajo:</label>
+						<input type="text" id="lu_correlativas_alumno">
+					</div>
+					<div class="contenedor_ef">
+						<label for="carrera_correlativas_alumno">Carrera:</label>
+						<select id="carrera_correlativas_alumno">
+							<option value="--">-- Seleccione --</option>
+							<option value="01">Ingeniería Agronómica</option>
+							<option value="08">Ingeniería Industrial</option>
+						</select>
+					</div>
+					<div class="contenedor_ef">
+						<label for="materia_correlativas_alumno">Materia:</label>
+						<select id="materia_correlativas_alumno">
+							<option value="60.">Genetica</option>
+							<option value="63.">Edafología</option>
+							<option value="67.">Economía Política</option>
+							<option value="87.">Proyecto y Planif. Agropecuaria</option>
+							<option value="56.">Agroclimatologia</option>
+							<option value="62.">Botánica</option>
+							<option value="79.">Silvicultura</option>
+						</select>
+					</div>
+					<div class="contenedor_ef">
+						<label for="fecha_ref_correlativas_alumno">Fecha Referencia:</label>
+						<input type="date" id="fecha_ref_correlativas_alumno">
+					</div>
+					<div class="contenedor_ef">
+						<input type="button" id="btn_correlativas_alumno_buscar" value="Buscar" disabled>
+					</div>
+				</div>
+				<div id="contenedor_estado_correlativas">
+				</div>
+				<template id="estado_correlativas">
+					<div class="contenedor_lista_correlativas">
+						<div class="titulo_estado_correlativas"></div>
+						<ul class="lista_estado_correlativas">
+						</ul>
+					</div>
+				</template>
+				<div id="loader_estado_correlativas" class="hidden centrado"><img src="<?php echo base_url(); ?>assets/img/perm/loader-dots.svg" ></div>
+					<script src="<?php echo base_url(); ?>assets/js/estado_correlativas.js"></script>
+					
+				</div>
 			</div>
 			
 		</div>

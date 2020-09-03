@@ -19,6 +19,9 @@
 .oculto{
 	display: none;
 }
+.hidden{
+	visibility: hidden;
+}
 .derecha{
 	text-align: right;
 }
@@ -293,5 +296,66 @@ select{
 	text-align: center;
 	font-weight: lighter;
 	font-size: 0.8em;
+}
+
+#contenedor_estado_correlativas{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	width: 90%;
+}
+.contenedor_lista_correlativas{
+border: 1px solid #dcd3d3;
+padding:30px;
+}
+
+.titulo_estado_correlativas{
+	background-color:#5c9ccc;
+	color:#FFF;
+	padding: 5px 10px;
+	font-size: 0.8rem;
+}
+
+.formulario{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 800px;
+}
+.contenedor_ef{
+	margin: 5px 0px;
+	min-width: 500px;
+	padding: 3px 0px;
+	width: 100%;
+}
+.contenedor_ef label{
+	display:inline-block;
+	font-size: 13px;
+	min-width: 170px;
+	text-align: right;
+}
+.contenedor_ef input[type='button']{
+	position:relative;
+	left: 400px;
+}
+.titulo_estado_correlativas{
+	text-align: center;
+	font-size: .9em;
+	font-weight: bold;
+}
+.lista_estado_correlativas{
+	padding: 0px 0px;
+	margin-left: 30px;
+}
+.lista_estado_correlativas li{
+    color:#409a40;
+    font-size: 0.8em;
+    margin: 0px;
+    padding: 5px 0px;
+}
+.incumplido{
+	color:#fb0000 !important;
+	
 }
 
