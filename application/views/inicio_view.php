@@ -384,13 +384,7 @@
 					<div class="contenedor_ef">
 						<label for="materia_correlativas_alumno">Materia:</label>
 						<select id="materia_correlativas_alumno">
-							<option value="60.">Genetica</option>
-							<option value="63.">Edafología</option>
-							<option value="67.">Economía Política</option>
-							<option value="87.">Proyecto y Planif. Agropecuaria</option>
-							<option value="56.">Agroclimatologia</option>
-							<option value="62.">Botánica</option>
-							<option value="79.">Silvicultura</option>
+							
 						</select>
 					</div>
 					<div class="contenedor_ef">
