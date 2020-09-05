@@ -30,10 +30,10 @@
 				<li><a href="#cursadas">Result. Cursadas</a></li>
 				<li><a href="#examenes">Result. Examenes</a></li>
 				<li><a href="#egresados">Egresados</a></li>
-				<li><a href="#insc_examen">Inscritos Examen</a></li>
-				<li><a href="#const_ingresante">Const. Ingresante</a></li>
-				<li><a href="#leg_prog">Leg. Progr.</a></li>
-				<li><a href="#cert_pendientes">Cert. Pend.</a></li>
+				<!-- <li><a href="#insc_examen">Inscritos Examen</a></li> -->
+				<!-- <li><a href="#const_ingresante">Const. Ingresante</a></li> -->
+				<!-- <li><a href="#leg_prog">Leg. Progr.</a></li> -->
+				<!-- <li><a href="#cert_pendientes">Cert. Pend.</a></li> -->
 				<li><a href="#desercion">Deserción</a></li>
 				
 			</ul>
@@ -301,7 +301,7 @@
 
 				</div>
 			</div>
-			<div id="insc_examen">
+			<!-- <div id="insc_examen">
 				<div id="lista_materias">
 					<form action="<?php echo base_url(); ?>index.php/inicio/pdf_inscritos_examen" method="POST" target="_BLANK">
 						Materia: 
@@ -328,9 +328,9 @@
 						
 					</form>
 				</div>
-			</div>
+			</div> -->
 
-			<div id="const_ingresante">
+			<!-- <div id="const_ingresante">
 				<div id="filtro_const_ingresante">
 					Alumno: <input type="text" id="apellido_ingresante" placeholder="Ingrese parte del nombre o del apellido del alumno"></input>
 					<input type="button" value="Para YO VOY" id="cmd_gen_const_yovoy">
@@ -357,7 +357,7 @@
 					<a href="./index.php/inicio/cert_pendientes" target="_BLANK">Imprimir</a>
 				</div>
 
-			</div>
+			</div> -->
 			<div id="desercion">
 				<div class="centrado procesando">Buscando...</div>
 				Años anteriores <input type="number" name="anios_anteriores" id="anios_anteriores" value=10>
