@@ -2,7 +2,7 @@ d = document;
 d.addEventListener('DOMContentLoaded', e => {
 	headers = new Headers({Authorization: 'Basic ' + btoa('cliente:ClienteGuarani')});
 	//url = 'http://10.20.253.90:8080/rest';
-	url = 'http://10.30.1.13:83/rest/';
+	url = 'http://10.30.1.13:83/rest';
 	$legajo = d.getElementById('lu_correlativas_alumno');
 	$carrera = d.getElementById('carrera_correlativas_alumno');
 	$materia = d.getElementById('materia_correlativas_alumno');
@@ -130,7 +130,7 @@ async function procesar(){
 	let resultado = await fetch(`${url}/estado_correlativas/${$legajo.value}/${$carrera.value}/${$materia.value}/${$fecha_ref.value}`,{headers});
 	if(resultado.ok){
 		datos = await resultado.json();
-		if(datos.length){
+		if( ! datos.length){
 			armarTablaEstado(datos);
 		}else{
 			alert('No se encontraron datos');
