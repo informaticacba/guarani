@@ -1,8 +1,8 @@
 d = document;
 d.addEventListener('DOMContentLoaded', e => {
 	headers = new Headers({Authorization: 'Basic ' + btoa('cliente:ClienteGuarani')});
-	//url = 'http://10.20.253.90:8080/rest';
-	url = 'http://10.30.1.13:83/rest/estado_correlativas';
+	url = 'http://10.20.253.90:8080/rest';
+	//url = 'http://10.30.1.13:83/rest/estado_correlativas';
 	$legajo = d.getElementById('lu_correlativas_alumno');
 	$carrera = d.getElementById('carrera_correlativas_alumno');
 	$materia = d.getElementById('materia_correlativas_alumno');
@@ -13,7 +13,7 @@ d.addEventListener('DOMContentLoaded', e => {
 
 	$legajo.addEventListener('blur', e => {
 		$boton.disabled  = ( ! $legajo.value.length) || $carrera.value == '--';
-		if($carrera.value.length) llenarComboMaterias()
+		if($carrera.value != '--') llenarComboMaterias()
 	});
 	$carrera.addEventListener('change', e => {
 		$boton.disabled  = ( ! $legajo.value.length) || $carrera.value == '--';
@@ -68,12 +68,24 @@ function armarTablaEstado(datos){
 }
 
 async function llenarComboMaterias(){
-	d.getElementById('loader_estado_correlativas').classList.toggle('hidden');
+	procesando(true);
+	//guarda la opci�n seleccionada, y si vuelve a existir, se asigna como seleccionada
+	seleccionPrevia = ($materia.selectedIndex != -1) ? $materia.options[$materia.selectedIndex].value : null;
+	//se vacia el commbo
 	$materia.innerHTML = '';
+	//Fragmento para pegar las opciones que se traen del service
 	$fragmento = d.createDocumentFragment();
+	//Obtengo los datos
 	const resultado = await fetch(`${url}/get_materias_plan_alumno/${$carrera.value}/${$legajo.value}`,{headers});
+	
 	if(resultado.ok){
 		datos = await resultado.json();
+		if( ! datos.length){
+			alert('No se encontraron materias con los criterios ingresados');
+			procesando(false);
+			return;	
+		} 
+
 		datos.forEach( materia => {
 			opt = d.createElement('option');
 			opt.value = materia.materia;
@@ -81,15 +93,34 @@ async function llenarComboMaterias(){
 			$fragmento.appendChild(opt);
 		})
 		$materia.appendChild($fragmento);
+		//Si existía alguna materia seleccionada antes de la carga, se la vuelve a seleccionar 
+		//(facilita cuando se busca alumnos de la misma materia)
+		if(seleccionPrevia){
+			opcion = $materia.querySelectorAll(`option[value='${seleccionPrevia}']`);
+			if(opcion) opcion[0].selected = true;
+		}
 	}else{
 		alert('Error al obtener las materias. Revise la consola');
 		console.log('Error al obtener las materias', resultado);
 	}
-	d.getElementById('loader_estado_correlativas').classList.toggle('hidden');
+	procesando(false);
+}
+
+function procesando(activo){
+	etiqueta = d.getElementById('loader_estado_correlativas');
+
+	if(activo && etiqueta.classList.contains('hidden')){
+		etiqueta.classList.remove('hidden');
+		$boton.disabled = true;
+	}
+	if( ! activo && ! etiqueta.classList.contains('hidden')){
+		etiqueta.classList.add('hidden');	
+		$boton.disabled = false;
+	}
 }
 
 async function procesar(){
-	d.getElementById('loader_estado_correlativas').classList.toggle('hidden');
+	procesando(true);
 	validaciones = validarCampos();
 	if(validaciones.error){
 		console.log(validaciones)
@@ -99,13 +130,18 @@ async function procesar(){
 	let resultado = await fetch(`${url}/estado_correlativas/${$legajo.value}/${$carrera.value}/${$materia.value}/${$fecha_ref.value}`,{headers});
 	if(resultado.ok){
 		datos = await resultado.json();
-		armarTablaEstado(datos);
+		if(datos.length){
+			armarTablaEstado(datos);
+		}else{
+			alert('No se encontraron datos');
+		}
+
 
 	}else{
 		alert('Error al obtener los datos. Revise la consola');
 		console.log('Error al obtener los datos', resultado);
 	}
-	d.getElementById('loader_estado_correlativas').classList.toggle('hidden');
+	procesando(false);
 }
 
 
