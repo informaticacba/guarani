@@ -30,10 +30,10 @@
 				<li><a href="#cursadas">Result. Cursadas</a></li>
 				<li><a href="#examenes">Result. Examenes</a></li>
 				<li><a href="#egresados">Egresados</a></li>
-				<li><a href="#insc_examen">Inscritos Examen</a></li>
-				<li><a href="#const_ingresante">Const. Ingresante</a></li>
-				<li><a href="#leg_prog">Leg. Progr.</a></li>
-				<li><a href="#cert_pendientes">Cert. Pend.</a></li>
+				<!-- <li><a href="#insc_examen">Inscritos Examen</a></li> -->
+				<!-- <li><a href="#const_ingresante">Const. Ingresante</a></li> -->
+				<!-- <li><a href="#leg_prog">Leg. Progr.</a></li> -->
+				<!-- <li><a href="#cert_pendientes">Cert. Pend.</a></li> -->
 				<li><a href="#desercion">Deserción</a></li>
 				
 			</ul>
