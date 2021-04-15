@@ -7,6 +7,15 @@ class Ajax extends CI_Controller {
 		$this->load->model("Guarani_model");
 	}
 
+	function get_config_guarani_rest()
+	{
+		echo json_encode(array(
+			'url_guarani_rest' => $this->config->item('url_guarani_rest'),
+			'user_guarani_rest' => $this->config->item('user_guarani_rest'),
+			'pass_guarani_rest' => $this->config->item('pass_guarani_rest')
+		));
+	}
+
 
 	public function condicion_tfg($legajo,$carrera){
 		$nro_inscripcion = $this->Guarani_model->get_nro_inscripcion($legajo,$carrera);

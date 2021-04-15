@@ -1,8 +1,9 @@
 d = document;
-d.addEventListener('DOMContentLoaded', e => {
+d.addEventListener('DOMContentLoaded', async e => {
 	headers = new Headers({Authorization: 'Basic ' + btoa('cliente:ClienteGuarani')});
 	//url = 'http://10.20.253.90:8080/rest';
-	url = 'http://10.30.1.13:83/rest';
+	configs = await fetch('/ajax/get_config_guarani_rest').then(c => c.json());
+	
 	$legajo = d.getElementById('lu_correlativas_alumno');
 	$carrera = d.getElementById('carrera_correlativas_alumno');
 	$materia = d.getElementById('materia_correlativas_alumno');
@@ -76,7 +77,7 @@ async function llenarComboMaterias(){
 	//Fragmento para pegar las opciones que se traen del service
 	$fragmento = d.createDocumentFragment();
 	//Obtengo los datos
-	const resultado = await fetch(`${url}/get_materias_plan_alumno/${$carrera.value}/${$legajo.value}`,{headers});
+	const resultado = await fetch(`${configs.url_guarani_rest}/get_materias_plan_alumno/${$carrera.value}/${$legajo.value}`,{headers});
 	
 	if(resultado.ok){
 		datos = await resultado.json();
@@ -127,7 +128,7 @@ async function procesar(){
 		alert(validaciones.errores);
 		return;
 	}
-	let resultado = await fetch(`${url}/estado_correlativas/${$legajo.value}/${$carrera.value}/${$materia.value}/${$fecha_ref.value}`,{headers});
+	let resultado = await fetch(`${configs.url_guarani_rest}/estado_correlativas/${$legajo.value}/${$carrera.value}/${$materia.value}/${$fecha_ref.value}`,{headers});
 	if(resultado.ok){
 		datos = await resultado.json();
 		if( ! datos.length){
